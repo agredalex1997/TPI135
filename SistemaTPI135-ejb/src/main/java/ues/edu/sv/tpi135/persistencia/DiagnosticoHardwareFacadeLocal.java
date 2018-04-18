@@ -5,7 +5,6 @@
  */
 package ues.edu.sv.tpi135.persistencia;
 
-import java.util.List;
 import javax.ejb.Local;
 import ues.edu.sv.tpi135.entidades.DiagnosticoHardware;
 
@@ -14,20 +13,6 @@ import ues.edu.sv.tpi135.entidades.DiagnosticoHardware;
  * @author esperanza
  */
 @Local
-public interface DiagnosticoHardwareFacadeLocal {
+public interface DiagnosticoHardwareFacadeLocal extends AbstractFacadeInterface<DiagnosticoHardware> {
 
-    void create(DiagnosticoHardware diagnosticoHardware);
-
-    void edit(DiagnosticoHardware diagnosticoHardware);
-
-    void remove(DiagnosticoHardware diagnosticoHardware);
-
-    DiagnosticoHardware find(Object id);
-
-    List<DiagnosticoHardware> findAll();
-
-    List<DiagnosticoHardware> findRange(int[] range);
-
-    int count();
-    
 }

@@ -5,7 +5,6 @@
  */
 package ues.edu.sv.tpi135.persistencia;
 
-import java.util.List;
 import javax.ejb.Local;
 import ues.edu.sv.tpi135.entidades.OrigenPeticion;
 
@@ -14,20 +13,6 @@ import ues.edu.sv.tpi135.entidades.OrigenPeticion;
  * @author esperanza
  */
 @Local
-public interface OrigenPeticionFacadeLocal {
+public interface OrigenPeticionFacadeLocal extends AbstractFacadeInterface<OrigenPeticion>{
 
-    void create(OrigenPeticion origenPeticion);
-
-    void edit(OrigenPeticion origenPeticion);
-
-    void remove(OrigenPeticion origenPeticion);
-
-    OrigenPeticion find(Object id);
-
-    List<OrigenPeticion> findAll();
-
-    List<OrigenPeticion> findRange(int[] range);
-
-    int count();
-    
 }

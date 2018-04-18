@@ -5,7 +5,6 @@
  */
 package ues.edu.sv.tpi135.persistencia;
 
-import java.util.List;
 import javax.ejb.Local;
 import ues.edu.sv.tpi135.entidades.Equipo;
 
@@ -14,20 +13,6 @@ import ues.edu.sv.tpi135.entidades.Equipo;
  * @author esperanza
  */
 @Local
-public interface EquipoFacadeLocal {
+public interface EquipoFacadeLocal extends AbstractFacadeInterface<Equipo>{
 
-    void create(Equipo equipo);
-
-    void edit(Equipo equipo);
-
-    void remove(Equipo equipo);
-
-    Equipo find(Object id);
-
-    List<Equipo> findAll();
-
-    List<Equipo> findRange(int[] range);
-
-    int count();
-    
 }

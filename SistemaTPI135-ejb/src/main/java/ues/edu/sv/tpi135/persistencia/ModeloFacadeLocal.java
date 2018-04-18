@@ -5,7 +5,6 @@
  */
 package ues.edu.sv.tpi135.persistencia;
 
-import java.util.List;
 import javax.ejb.Local;
 import ues.edu.sv.tpi135.entidades.Modelo;
 
@@ -14,20 +13,6 @@ import ues.edu.sv.tpi135.entidades.Modelo;
  * @author esperanza
  */
 @Local
-public interface ModeloFacadeLocal {
-
-    void create(Modelo modelo);
-
-    void edit(Modelo modelo);
-
-    void remove(Modelo modelo);
-
-    Modelo find(Object id);
-
-    List<Modelo> findAll();
-
-    List<Modelo> findRange(int[] range);
-
-    int count();
+public interface ModeloFacadeLocal extends AbstractFacadeInterface<Modelo>{
     
 }

@@ -5,7 +5,6 @@
  */
 package ues.edu.sv.tpi135.persistencia;
 
-import java.util.List;
 import javax.ejb.Local;
 import ues.edu.sv.tpi135.entidades.PasosProcedimiento;
 
@@ -14,20 +13,6 @@ import ues.edu.sv.tpi135.entidades.PasosProcedimiento;
  * @author esperanza
  */
 @Local
-public interface PasosProcedimientoFacadeLocal {
+public interface PasosProcedimientoFacadeLocal extends AbstractFacadeInterface<PasosProcedimiento>{
 
-    void create(PasosProcedimiento pasosProcedimiento);
-
-    void edit(PasosProcedimiento pasosProcedimiento);
-
-    void remove(PasosProcedimiento pasosProcedimiento);
-
-    PasosProcedimiento find(Object id);
-
-    List<PasosProcedimiento> findAll();
-
-    List<PasosProcedimiento> findRange(int[] range);
-
-    int count();
-    
 }

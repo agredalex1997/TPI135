@@ -5,7 +5,6 @@
  */
 package ues.edu.sv.tpi135.persistencia;
 
-import java.util.List;
 import javax.ejb.Local;
 import ues.edu.sv.tpi135.entidades.Calendario;
 
@@ -14,20 +13,6 @@ import ues.edu.sv.tpi135.entidades.Calendario;
  * @author esperanza
  */
 @Local
-public interface CalendarioFacadeLocal {
-
-    void create(Calendario calendario);
-
-    void edit(Calendario calendario);
-
-    void remove(Calendario calendario);
-
-    Calendario find(Object id);
-
-    List<Calendario> findAll();
-
-    List<Calendario> findRange(int[] range);
-
-    int count();
+public interface CalendarioFacadeLocal extends AbstractFacadeInterface<Calendario> {
     
 }

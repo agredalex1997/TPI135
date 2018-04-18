@@ -5,7 +5,6 @@
  */
 package ues.edu.sv.tpi135.persistencia;
 
-import java.util.List;
 import javax.ejb.Local;
 import ues.edu.sv.tpi135.entidades.ExcepcionCalendario;
 
@@ -14,20 +13,6 @@ import ues.edu.sv.tpi135.entidades.ExcepcionCalendario;
  * @author esperanza
  */
 @Local
-public interface ExcepcionCalendarioFacadeLocal {
-
-    void create(ExcepcionCalendario excepcionCalendario);
-
-    void edit(ExcepcionCalendario excepcionCalendario);
-
-    void remove(ExcepcionCalendario excepcionCalendario);
-
-    ExcepcionCalendario find(Object id);
-
-    List<ExcepcionCalendario> findAll();
-
-    List<ExcepcionCalendario> findRange(int[] range);
-
-    int count();
+public interface ExcepcionCalendarioFacadeLocal extends AbstractFacadeInterface<ExcepcionCalendario>{
     
 }
