@@ -54,7 +54,7 @@
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                     <warName>SistemaTPI135-web-1.0-SNAPSHOT</warName>
-                    <outputDirectory>./Payaramicro</outputDirectory>
+                    <outputDirectory>SistemaTPI135-web/Payaramicro</outputDirectory>
                 </configuration>
             </plugin>
             <plugin>
