@@ -13,8 +13,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import ues.edu.sv.mantenimientoTPI.acceso.OrigenPeticionFacadeLocal;
 import ues.edu.sv.tpi135.entidades.OrigenPeticion;
-import ues.edu.sv.tpi135.persistencia.OrigenPeticionFacadeLocal;
 
 /**
  *

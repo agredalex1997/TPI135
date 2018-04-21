@@ -13,8 +13,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import ues.edu.sv.mantenimientoTPI.acceso.TipoMantenimientoFacadeLocal;
 import ues.edu.sv.tpi135.entidades.TipoMantenimiento;
-import ues.edu.sv.tpi135.persistencia.TipoMantenimientoFacade;
 
 /**
  *
@@ -24,7 +24,7 @@ import ues.edu.sv.tpi135.persistencia.TipoMantenimientoFacade;
 @Path("/tipoMantenimiento")
 public class TipoMantenimientoResource implements Serializable{
     @EJB
-    private TipoMantenimientoFacade ejbTipomantenimiento;
+    private TipoMantenimientoFacadeLocal ejbTipomantenimiento;
     
     @GET
     @Produces(MediaType.APPLICATION_JSON)
