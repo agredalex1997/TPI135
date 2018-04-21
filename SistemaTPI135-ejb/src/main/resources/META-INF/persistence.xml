@@ -2,27 +2,7 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="ues.edu.sv.tpi135_SistemaTPI135-ejb_ejb_1.0-SNAPSHOTPU" transaction-type="JTA">
     <jta-data-source>jdbc/_mantenimiento</jta-data-source>
-    <class>ues.edu.sv.tpi135.entidades.Area</class>
-    <class>ues.edu.sv.tpi135.entidades.Calendario</class>
-    <class>ues.edu.sv.tpi135.entidades.DetalleEquipo</class>
-    <class>ues.edu.sv.tpi135.entidades.DetallePeticion</class>
-    <class>ues.edu.sv.tpi135.entidades.DiagnosticoHardware</class>
-    <class>ues.edu.sv.tpi135.entidades.DiagnosticoSoftware</class>
-    <class>ues.edu.sv.tpi135.entidades.Equipo</class>
-    <class>ues.edu.sv.tpi135.entidades.Estado</class>
-    <class>ues.edu.sv.tpi135.entidades.ExcepcionCalendario</class>
-    <class>ues.edu.sv.tpi135.entidades.Hardware</class>
-    <class>ues.edu.sv.tpi135.entidades.Marca</class>
-    <class>ues.edu.sv.tpi135.entidades.Modelo</class>
-    <class>ues.edu.sv.tpi135.entidades.OrdenTrabajo</class>
-    <class>ues.edu.sv.tpi135.entidades.OrigenPeticion</class>
-    <class>ues.edu.sv.tpi135.entidades.Pasos</class>
-    <class>ues.edu.sv.tpi135.entidades.PasosProcedimiento</class>
-    <class>ues.edu.sv.tpi135.entidades.PersonalMantenimiento</class>
-    <class>ues.edu.sv.tpi135.entidades.Peticion</class>
-    <class>ues.edu.sv.tpi135.entidades.Procedimiento</class>
-    <class>ues.edu.sv.tpi135.entidades.TipoMantenimiento</class>
-    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
     </properties>
