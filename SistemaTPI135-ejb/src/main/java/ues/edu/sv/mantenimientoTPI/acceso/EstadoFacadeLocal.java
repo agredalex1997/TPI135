@@ -7,7 +7,7 @@ package ues.edu.sv.mantenimientoTPI.acceso;
 
 import java.util.List;
 import javax.ejb.Local;
-import ues.edu.sv.tpi135.entidades.Estado;
+import ues.edu.sv.mantenimientoLib.Estado;
 
 /**
  *

@@ -14,7 +14,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import ues.edu.sv.mantenimientoTPI.acceso.EquipoFacadeLocal;
-import ues.edu.sv.tpi135.entidades.Equipo;
+import ues.edu.sv.mantenimientoLib.Equipo;
 
 /**
  *

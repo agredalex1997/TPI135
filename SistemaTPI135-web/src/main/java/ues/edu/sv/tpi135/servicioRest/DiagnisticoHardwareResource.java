@@ -14,7 +14,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import ues.edu.sv.mantenimientoTPI.acceso.DiagnosticoHardwareFacadeLocal;
-import ues.edu.sv.tpi135.entidades.DiagnosticoHardware;
+import ues.edu.sv.mantenimientoLib.DiagnosticoHardware;
 
 /**
  *

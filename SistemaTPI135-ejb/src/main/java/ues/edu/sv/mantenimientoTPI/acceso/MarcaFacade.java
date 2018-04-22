@@ -8,7 +8,7 @@ package ues.edu.sv.mantenimientoTPI.acceso;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import ues.edu.sv.tpi135.entidades.Marca;
+import ues.edu.sv.mantenimientoLib.Marca;
 
 /**
  *

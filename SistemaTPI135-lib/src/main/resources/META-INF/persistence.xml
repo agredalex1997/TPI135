@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="ues.edu.sv.tpi135_SistemaTPI135-lib_jar_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>ues.edu.sv.mantenimientoLib.Marca</class>
+    <class>ues.edu.sv.mantenimientoLib.DetallePeticion</class>
+    <class>ues.edu.sv.mantenimientoLib.DetalleEquipo</class>
+    <class>ues.edu.sv.mantenimientoLib.PersonalMantenimiento</class>
+    <class>ues.edu.sv.mantenimientoLib.Peticion</class>
+    <class>ues.edu.sv.mantenimientoLib.Modelo</class>
+    <class>ues.edu.sv.mantenimientoLib.DiagnosticoHardware</class>
+    <class>ues.edu.sv.mantenimientoLib.DiagnosticoSoftware</class>
+    <class>ues.edu.sv.mantenimientoLib.PasosProcedimiento</class>
+    <class>ues.edu.sv.mantenimientoLib.Area</class>
+    <class>ues.edu.sv.mantenimientoLib.Estado</class>
+    <class>ues.edu.sv.mantenimientoLib.TipoMantenimiento</class>
+    <class>ues.edu.sv.mantenimientoLib.Equipo</class>
+    <class>ues.edu.sv.mantenimientoLib.Calendario</class>
+    <class>ues.edu.sv.mantenimientoLib.OrdenTrabajo</class>
+    <class>ues.edu.sv.mantenimientoLib.OrigenPeticion</class>
+    <class>ues.edu.sv.mantenimientoLib.Pasos</class>
+    <class>ues.edu.sv.mantenimientoLib.Hardware</class>
+    <class>ues.edu.sv.mantenimientoLib.Procedimiento</class>
+    <class>ues.edu.sv.mantenimientoLib.ExcepcionCalendario</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mantenimientoTpi"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="1234"/>
+    </properties>
+  </persistence-unit>
+</persistence>

@@ -15,8 +15,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import ues.edu.sv.mantenimientoTPI.acceso.CalendarioFacadeLocal;
-import ues.edu.sv.tpi135.entidades.Calendario;
-import ues.edu.sv.tpi135.entidades.CalendarioPK;
+import ues.edu.sv.mantenimientoLib.Calendario;
+import ues.edu.sv.mantenimientoLib.CalendarioPK;
 
 /**
  *
