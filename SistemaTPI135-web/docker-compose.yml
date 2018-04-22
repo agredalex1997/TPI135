@@ -14,9 +14,9 @@ services:
         image: 'microserver'
         build: ./Payaramicro/.   
         container_name: 'payaramicro'
-        #command: dockerize -wait http://172.18.0.1:3300 -timeout 15s
         depends_on:
         - marmantenimiento
         ports:
         - "8080:8080"
+       
     
