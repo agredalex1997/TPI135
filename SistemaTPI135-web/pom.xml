@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-    <artifactId>SistemaTPI135</artifactId>
-    <groupId>ues.edu.sv.tpi135</groupId>
-    <version>1.0-SNAPSHOT</version>
-  </parent>
+        <artifactId>SistemaTPI135</artifactId>
+        <groupId>ues.edu.sv.tpi135</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
 
     <groupId>ues.edu.sv.tpi135</groupId>
     <artifactId>SistemaTPI135-web</artifactId>
@@ -47,6 +47,7 @@
                     </compilerArguments>
                 </configuration>
             </plugin>
+            <!--plugin para mover el war a la carpeta de payaramicro-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -56,6 +57,78 @@
                     <warName>SistemaTPI135-web-1.0-SNAPSHOT</warName>
                     <outputDirectory>SistemaTPI135-web/Payaramicro</outputDirectory>
                 </configuration>
+            </plugin>
+            <!--plugin para levantar los contenedores de docker--> 
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <executions>
+                    <execution>
+                        <id>composedown</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>docker-compose</executable>
+                            <commandlineArgs>down</commandlineArgs>                         
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>removiendomaridb</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>docker</executable>
+                            <commandlineArgs>rmi -f mariadbtpi</commandlineArgs>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>removiendopaymicro</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>docker</executable>
+                            <commandlineArgs>rmi -f microserver</commandlineArgs>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>com.dkanejs.maven.plugins</groupId>
+                <artifactId>docker-compose-maven-plugin</artifactId>
+                <version>1.0.3</version>
+                <executions>
+<!--                    <execution>
+                        <id>down</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>down</goal>
+                        </goals>
+                        <configuration>
+                            <composeFile>SistemaTPI135-web/docker-compose.yml</composeFile>
+                            <removeVolumes>true</removeVolumes>
+                           
+                        </configuration>
+                    </execution>-->
+                    <execution>
+                        <id>up</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>up</goal>
+                        </goals>
+                        <configuration>
+                            <composeFile>SistemaTPI135-web/docker-compose.yml</composeFile>
+                            <detachedMode>false</detachedMode>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
