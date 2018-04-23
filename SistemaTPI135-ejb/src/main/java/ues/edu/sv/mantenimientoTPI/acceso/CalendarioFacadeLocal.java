@@ -11,10 +11,23 @@ import ues.edu.sv.mantenimientoLib.Calendario;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Local
-public interface CalendarioFacadeLocal extends AbstractFacadeInterface<Calendario>{
+public interface CalendarioFacadeLocal {
 
+    void create(Calendario calendario);
+
+    void edit(Calendario calendario);
+
+    void remove(Calendario calendario);
+
+    Calendario find(Object id);
+
+    List<Calendario> findAll();
+
+    List<Calendario> findRange(int[] range);
+
+    int count();
     
 }

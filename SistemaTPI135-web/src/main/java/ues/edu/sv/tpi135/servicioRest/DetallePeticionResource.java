@@ -15,7 +15,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import ues.edu.sv.mantenimientoTPI.acceso.DetallePeticionFacadeLocal;
 import ues.edu.sv.mantenimientoLib.DetallePeticion;
-import ues.edu.sv.mantenimientoLib.DetallePeticionPK;
+
 
 /**
  *
@@ -51,7 +51,7 @@ public class DetallePeticionResource implements Serializable{
         }
         return count;
     }
-    
+    /**
     @Path("/{idPeticion}/{idEquipo}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -89,4 +89,5 @@ public class DetallePeticionResource implements Serializable{
         }
         return respuesta;
     }
+    **/
 }

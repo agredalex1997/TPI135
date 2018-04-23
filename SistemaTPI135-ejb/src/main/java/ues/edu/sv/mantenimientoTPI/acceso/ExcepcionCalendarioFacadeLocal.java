@@ -11,10 +11,23 @@ import ues.edu.sv.mantenimientoLib.ExcepcionCalendario;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Local
-public interface ExcepcionCalendarioFacadeLocal extends AbstractFacadeInterface<ExcepcionCalendario>{
+public interface ExcepcionCalendarioFacadeLocal {
 
+    void create(ExcepcionCalendario excepcionCalendario);
+
+    void edit(ExcepcionCalendario excepcionCalendario);
+
+    void remove(ExcepcionCalendario excepcionCalendario);
+
+    ExcepcionCalendario find(Object id);
+
+    List<ExcepcionCalendario> findAll();
+
+    List<ExcepcionCalendario> findRange(int[] range);
+
+    int count();
     
 }

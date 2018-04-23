@@ -12,7 +12,7 @@ import ues.edu.sv.mantenimientoLib.DetalleEquipo;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Stateless
 public class DetalleEquipoFacade extends AbstractFacade<DetalleEquipo> implements DetalleEquipoFacadeLocal {

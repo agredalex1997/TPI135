@@ -10,8 +10,8 @@ import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
@@ -23,22 +23,23 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Entity
 @Table(name = "MODELO", catalog = "mantenimientoTpi", schema = "")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Modelo.findAll", query = "SELECT m FROM Modelo m")
-    , @NamedQuery(name = "Modelo.findById", query = "SELECT m FROM Modelo m WHERE m.modeloPK.id = :id")
-    , @NamedQuery(name = "Modelo.findByIdMarca", query = "SELECT m FROM Modelo m WHERE m.modeloPK.idMarca = :idMarca")
+    , @NamedQuery(name = "Modelo.findById", query = "SELECT m FROM Modelo m WHERE m.id = :id")
     , @NamedQuery(name = "Modelo.findByNombre", query = "SELECT m FROM Modelo m WHERE m.nombre = :nombre")
     , @NamedQuery(name = "Modelo.findByObservaciones", query = "SELECT m FROM Modelo m WHERE m.observaciones = :observaciones")})
 public class Modelo implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @EmbeddedId
-    protected ModeloPK modeloPK;
+    @Id
+    @Basic(optional = false)
+    @Column(name = "ID")
+    private Integer id;
     @Basic(optional = false)
     @Column(name = "NOMBRE")
     private String nombre;
@@ -48,32 +49,28 @@ public class Modelo implements Serializable {
     private Collection<Equipo> equipoCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idModelo")
     private Collection<DetalleEquipo> detalleEquipoCollection;
-    @JoinColumn(name = "ID_MARCA", referencedColumnName = "ID", insertable = false, updatable = false)
+    @JoinColumn(name = "ID_MARCA", referencedColumnName = "ID")
     @ManyToOne(optional = false)
-    private Marca marca;
+    private Marca idMarca;
 
     public Modelo() {
     }
 
-    public Modelo(ModeloPK modeloPK) {
-        this.modeloPK = modeloPK;
+    public Modelo(Integer id) {
+        this.id = id;
     }
 
-    public Modelo(ModeloPK modeloPK, String nombre) {
-        this.modeloPK = modeloPK;
+    public Modelo(Integer id, String nombre) {
+        this.id = id;
         this.nombre = nombre;
     }
 
-    public Modelo(int id, int idMarca) {
-        this.modeloPK = new ModeloPK(id, idMarca);
+    public Integer getId() {
+        return id;
     }
 
-    public ModeloPK getModeloPK() {
-        return modeloPK;
-    }
-
-    public void setModeloPK(ModeloPK modeloPK) {
-        this.modeloPK = modeloPK;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -110,18 +107,18 @@ public class Modelo implements Serializable {
         this.detalleEquipoCollection = detalleEquipoCollection;
     }
 
-    public Marca getMarca() {
-        return marca;
+    public Marca getIdMarca() {
+        return idMarca;
     }
 
-    public void setMarca(Marca marca) {
-        this.marca = marca;
+    public void setIdMarca(Marca idMarca) {
+        this.idMarca = idMarca;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (modeloPK != null ? modeloPK.hashCode() : 0);
+        hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
@@ -132,7 +129,7 @@ public class Modelo implements Serializable {
             return false;
         }
         Modelo other = (Modelo) object;
-        if ((this.modeloPK == null && other.modeloPK != null) || (this.modeloPK != null && !this.modeloPK.equals(other.modeloPK))) {
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;
@@ -140,7 +137,7 @@ public class Modelo implements Serializable {
 
     @Override
     public String toString() {
-        return "ues.edu.sv.mantenimientoLib.Modelo[ modeloPK=" + modeloPK + " ]";
+        return "ues.edu.sv.mantenimientoLib.Modelo[ id=" + id + " ]";
     }
     
 }

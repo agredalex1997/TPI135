@@ -11,11 +11,23 @@ import ues.edu.sv.mantenimientoLib.Estado;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Local
-public interface EstadoFacadeLocal extends AbstractFacadeInterface<Estado>{
+public interface EstadoFacadeLocal {
 
+    void create(Estado estado);
 
+    void edit(Estado estado);
+
+    void remove(Estado estado);
+
+    Estado find(Object id);
+
+    List<Estado> findAll();
+
+    List<Estado> findRange(int[] range);
+
+    int count();
     
 }

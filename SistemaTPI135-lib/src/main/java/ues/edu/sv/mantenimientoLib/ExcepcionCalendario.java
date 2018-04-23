@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Entity
 @Table(name = "EXCEPCION_CALENDARIO", catalog = "mantenimientoTpi", schema = "")

@@ -11,11 +11,23 @@ import ues.edu.sv.mantenimientoLib.Area;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Local
-public interface AreaFacadeLocal extends AbstractFacadeInterface<Area>{
+public interface AreaFacadeLocal {
 
- 
+    void create(Area area);
+
+    void edit(Area area);
+
+    void remove(Area area);
+
+    Area find(Object id);
+
+    List<Area> findAll();
+
+    List<Area> findRange(int[] range);
+
+    int count();
     
 }

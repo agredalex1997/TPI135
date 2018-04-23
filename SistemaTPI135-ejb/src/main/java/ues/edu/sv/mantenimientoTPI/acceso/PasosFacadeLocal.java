@@ -11,11 +11,23 @@ import ues.edu.sv.mantenimientoLib.Pasos;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Local
-public interface PasosFacadeLocal extends AbstractFacadeInterface<Pasos>{
+public interface PasosFacadeLocal {
 
-   
+    void create(Pasos pasos);
+
+    void edit(Pasos pasos);
+
+    void remove(Pasos pasos);
+
+    Pasos find(Object id);
+
+    List<Pasos> findAll();
+
+    List<Pasos> findRange(int[] range);
+
+    int count();
     
 }

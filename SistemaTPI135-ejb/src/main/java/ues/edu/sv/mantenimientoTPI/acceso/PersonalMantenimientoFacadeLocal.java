@@ -11,11 +11,23 @@ import ues.edu.sv.mantenimientoLib.PersonalMantenimiento;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Local
-public interface PersonalMantenimientoFacadeLocal extends AbstractFacadeInterface<PersonalMantenimiento>{
+public interface PersonalMantenimientoFacadeLocal {
 
-  
+    void create(PersonalMantenimiento personalMantenimiento);
+
+    void edit(PersonalMantenimiento personalMantenimiento);
+
+    void remove(PersonalMantenimiento personalMantenimiento);
+
+    PersonalMantenimiento find(Object id);
+
+    List<PersonalMantenimiento> findAll();
+
+    List<PersonalMantenimiento> findRange(int[] range);
+
+    int count();
     
 }

@@ -11,11 +11,23 @@ import ues.edu.sv.mantenimientoLib.Peticion;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Local
-public interface PeticionFacadeLocal extends AbstractFacadeInterface<Peticion>{
+public interface PeticionFacadeLocal {
 
-  
+    void create(Peticion peticion);
+
+    void edit(Peticion peticion);
+
+    void remove(Peticion peticion);
+
+    Peticion find(Object id);
+
+    List<Peticion> findAll();
+
+    List<Peticion> findRange(int[] range);
+
+    int count();
     
 }

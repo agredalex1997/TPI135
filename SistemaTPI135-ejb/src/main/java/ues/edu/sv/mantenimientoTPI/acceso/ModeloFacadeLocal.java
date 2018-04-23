@@ -11,11 +11,23 @@ import ues.edu.sv.mantenimientoLib.Modelo;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Local
-public interface ModeloFacadeLocal extends AbstractFacadeInterface<Modelo>{
+public interface ModeloFacadeLocal {
 
-   
+    void create(Modelo modelo);
+
+    void edit(Modelo modelo);
+
+    void remove(Modelo modelo);
+
+    Modelo find(Object id);
+
+    List<Modelo> findAll();
+
+    List<Modelo> findRange(int[] range);
+
+    int count();
     
 }

@@ -12,7 +12,7 @@ import ues.edu.sv.mantenimientoLib.Modelo;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Stateless
 public class ModeloFacade extends AbstractFacade<Modelo> implements ModeloFacadeLocal {

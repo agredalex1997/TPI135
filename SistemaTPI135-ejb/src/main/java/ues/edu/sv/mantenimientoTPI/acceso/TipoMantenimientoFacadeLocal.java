@@ -11,11 +11,23 @@ import ues.edu.sv.mantenimientoLib.TipoMantenimiento;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Local
-public interface TipoMantenimientoFacadeLocal extends AbstractFacadeInterface<TipoMantenimiento>{
+public interface TipoMantenimientoFacadeLocal {
 
-   
+    void create(TipoMantenimiento tipoMantenimiento);
+
+    void edit(TipoMantenimiento tipoMantenimiento);
+
+    void remove(TipoMantenimiento tipoMantenimiento);
+
+    TipoMantenimiento find(Object id);
+
+    List<TipoMantenimiento> findAll();
+
+    List<TipoMantenimiento> findRange(int[] range);
+
+    int count();
     
 }

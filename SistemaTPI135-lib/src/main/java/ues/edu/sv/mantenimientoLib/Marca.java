@@ -21,7 +21,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Entity
 @Table(name = "MARCA", catalog = "mantenimientoTpi", schema = "")
@@ -47,7 +47,7 @@ public class Marca implements Serializable {
     private boolean activo;
     @Column(name = "OBSERVACIONES")
     private String observaciones;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "marca")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idMarca")
     private Collection<Modelo> modeloCollection;
 
     public Marca() {

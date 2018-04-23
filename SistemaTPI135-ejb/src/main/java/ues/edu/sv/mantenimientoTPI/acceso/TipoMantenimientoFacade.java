@@ -12,7 +12,7 @@ import ues.edu.sv.mantenimientoLib.TipoMantenimiento;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Stateless
 public class TipoMantenimientoFacade extends AbstractFacade<TipoMantenimiento> implements TipoMantenimientoFacadeLocal {

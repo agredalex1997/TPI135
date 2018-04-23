@@ -7,10 +7,11 @@ package ues.edu.sv.mantenimientoLib;
 
 import java.io.Serializable;
 import java.util.Collection;
+import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
@@ -22,51 +23,46 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Entity
 @Table(name = "DETALLE_PETICION", catalog = "mantenimientoTpi", schema = "")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "DetallePeticion.findAll", query = "SELECT d FROM DetallePeticion d")
-    , @NamedQuery(name = "DetallePeticion.findByIdPeticion", query = "SELECT d FROM DetallePeticion d WHERE d.detallePeticionPK.idPeticion = :idPeticion")
-    , @NamedQuery(name = "DetallePeticion.findByIdEquipo", query = "SELECT d FROM DetallePeticion d WHERE d.detallePeticionPK.idEquipo = :idEquipo")
+    , @NamedQuery(name = "DetallePeticion.findById", query = "SELECT d FROM DetallePeticion d WHERE d.id = :id")
     , @NamedQuery(name = "DetallePeticion.findByObservaciones", query = "SELECT d FROM DetallePeticion d WHERE d.observaciones = :observaciones")})
 public class DetallePeticion implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @EmbeddedId
-    protected DetallePeticionPK detallePeticionPK;
+    @Id
+    @Basic(optional = false)
+    @Column(name = "ID")
+    private Integer id;
     @Column(name = "OBSERVACIONES")
     private String observaciones;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idEquipo")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idDetallePeticion")
     private Collection<OrdenTrabajo> ordenTrabajoCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idPeticion")
-    private Collection<OrdenTrabajo> ordenTrabajoCollection1;
-    @JoinColumn(name = "ID_EQUIPO", referencedColumnName = "ID", insertable = false, updatable = false)
+    @JoinColumn(name = "ID_EQUIPO", referencedColumnName = "ID")
     @ManyToOne(optional = false)
-    private Equipo equipo;
-    @JoinColumn(name = "ID_PETICION", referencedColumnName = "ID", insertable = false, updatable = false)
+    private Equipo idEquipo;
+    @JoinColumn(name = "ID_PETICION", referencedColumnName = "ID")
     @ManyToOne(optional = false)
-    private Peticion peticion;
+    private Peticion idPeticion;
 
     public DetallePeticion() {
     }
 
-    public DetallePeticion(DetallePeticionPK detallePeticionPK) {
-        this.detallePeticionPK = detallePeticionPK;
+    public DetallePeticion(Integer id) {
+        this.id = id;
     }
 
-    public DetallePeticion(int idPeticion, int idEquipo) {
-        this.detallePeticionPK = new DetallePeticionPK(idPeticion, idEquipo);
+    public Integer getId() {
+        return id;
     }
 
-    public DetallePeticionPK getDetallePeticionPK() {
-        return detallePeticionPK;
-    }
-
-    public void setDetallePeticionPK(DetallePeticionPK detallePeticionPK) {
-        this.detallePeticionPK = detallePeticionPK;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getObservaciones() {
@@ -86,35 +82,26 @@ public class DetallePeticion implements Serializable {
         this.ordenTrabajoCollection = ordenTrabajoCollection;
     }
 
-    @XmlTransient
-    public Collection<OrdenTrabajo> getOrdenTrabajoCollection1() {
-        return ordenTrabajoCollection1;
+    public Equipo getIdEquipo() {
+        return idEquipo;
     }
 
-    public void setOrdenTrabajoCollection1(Collection<OrdenTrabajo> ordenTrabajoCollection1) {
-        this.ordenTrabajoCollection1 = ordenTrabajoCollection1;
+    public void setIdEquipo(Equipo idEquipo) {
+        this.idEquipo = idEquipo;
     }
 
-    public Equipo getEquipo() {
-        return equipo;
+    public Peticion getIdPeticion() {
+        return idPeticion;
     }
 
-    public void setEquipo(Equipo equipo) {
-        this.equipo = equipo;
-    }
-
-    public Peticion getPeticion() {
-        return peticion;
-    }
-
-    public void setPeticion(Peticion peticion) {
-        this.peticion = peticion;
+    public void setIdPeticion(Peticion idPeticion) {
+        this.idPeticion = idPeticion;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (detallePeticionPK != null ? detallePeticionPK.hashCode() : 0);
+        hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
@@ -125,7 +112,7 @@ public class DetallePeticion implements Serializable {
             return false;
         }
         DetallePeticion other = (DetallePeticion) object;
-        if ((this.detallePeticionPK == null && other.detallePeticionPK != null) || (this.detallePeticionPK != null && !this.detallePeticionPK.equals(other.detallePeticionPK))) {
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;
@@ -133,7 +120,7 @@ public class DetallePeticion implements Serializable {
 
     @Override
     public String toString() {
-        return "ues.edu.sv.mantenimientoLib.DetallePeticion[ detallePeticionPK=" + detallePeticionPK + " ]";
+        return "ues.edu.sv.mantenimientoLib.DetallePeticion[ id=" + id + " ]";
     }
     
 }

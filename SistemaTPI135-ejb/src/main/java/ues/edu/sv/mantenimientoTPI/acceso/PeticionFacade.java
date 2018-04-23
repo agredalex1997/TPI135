@@ -12,7 +12,7 @@ import ues.edu.sv.mantenimientoLib.Peticion;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Stateless
 public class PeticionFacade extends AbstractFacade<Peticion> implements PeticionFacadeLocal {

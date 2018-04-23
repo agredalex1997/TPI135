@@ -12,7 +12,7 @@ import ues.edu.sv.mantenimientoLib.Marca;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Stateless
 public class MarcaFacade extends AbstractFacade<Marca> implements MarcaFacadeLocal {

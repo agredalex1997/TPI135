@@ -12,7 +12,7 @@ import ues.edu.sv.mantenimientoLib.DiagnosticoHardware;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Stateless
 public class DiagnosticoHardwareFacade extends AbstractFacade<DiagnosticoHardware> implements DiagnosticoHardwareFacadeLocal {

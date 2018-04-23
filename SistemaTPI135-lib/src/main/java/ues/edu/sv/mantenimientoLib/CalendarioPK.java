@@ -15,7 +15,7 @@ import javax.persistence.TemporalType;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Embeddable
 public class CalendarioPK implements Serializable {

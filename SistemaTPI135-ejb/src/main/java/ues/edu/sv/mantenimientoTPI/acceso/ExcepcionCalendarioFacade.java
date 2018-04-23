@@ -12,7 +12,7 @@ import ues.edu.sv.mantenimientoLib.ExcepcionCalendario;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Stateless
 public class ExcepcionCalendarioFacade extends AbstractFacade<ExcepcionCalendario> implements ExcepcionCalendarioFacadeLocal {

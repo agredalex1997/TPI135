@@ -11,10 +11,23 @@ import ues.edu.sv.mantenimientoLib.DiagnosticoSoftware;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Local
-public interface DiagnosticoSoftwareFacadeLocal extends AbstractFacadeInterface<DiagnosticoSoftware>{
+public interface DiagnosticoSoftwareFacadeLocal {
 
+    void create(DiagnosticoSoftware diagnosticoSoftware);
+
+    void edit(DiagnosticoSoftware diagnosticoSoftware);
+
+    void remove(DiagnosticoSoftware diagnosticoSoftware);
+
+    DiagnosticoSoftware find(Object id);
+
+    List<DiagnosticoSoftware> findAll();
+
+    List<DiagnosticoSoftware> findRange(int[] range);
+
+    int count();
     
 }

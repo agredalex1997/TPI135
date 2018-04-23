@@ -11,11 +11,23 @@ import ues.edu.sv.mantenimientoLib.Marca;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Local
-public interface MarcaFacadeLocal extends AbstractFacadeInterface<Marca>{
+public interface MarcaFacadeLocal {
 
-   
+    void create(Marca marca);
+
+    void edit(Marca marca);
+
+    void remove(Marca marca);
+
+    Marca find(Object id);
+
+    List<Marca> findAll();
+
+    List<Marca> findRange(int[] range);
+
+    int count();
     
 }
