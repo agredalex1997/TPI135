@@ -12,7 +12,7 @@ import ues.edu.sv.mantenimientoLib.Estado;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Stateless
 public class EstadoFacade extends AbstractFacade<Estado> implements EstadoFacadeLocal {

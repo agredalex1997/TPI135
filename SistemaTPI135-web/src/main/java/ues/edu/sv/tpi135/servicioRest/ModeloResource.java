@@ -15,7 +15,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import ues.edu.sv.mantenimientoTPI.acceso.ModeloFacadeLocal;
 import ues.edu.sv.mantenimientoLib.Modelo;
-import ues.edu.sv.mantenimientoLib.ModeloPK;
+
 
 /**
  *
@@ -51,7 +51,7 @@ public class ModeloResource implements Serializable{
         }
         return count;
     }
-    
+    /**
     @Path("/{idModelo}/{idMarca}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -89,4 +89,5 @@ public class ModeloResource implements Serializable{
         }
         return respuesta;
     }
+    **/
 }

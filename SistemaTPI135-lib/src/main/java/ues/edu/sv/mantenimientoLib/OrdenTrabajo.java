@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Entity
 @Table(name = "ORDEN_TRABAJO", catalog = "mantenimientoTpi", schema = "")
@@ -48,18 +48,15 @@ public class OrdenTrabajo implements Serializable {
     @Column(name = "FECHA_SALIDA")
     @Temporal(TemporalType.DATE)
     private Date fechaSalida;
+    @JoinColumn(name = "ID_DETALLE_PETICION", referencedColumnName = "ID")
+    @ManyToOne(optional = false)
+    private DetallePeticion idDetallePeticion;
     @JoinColumn(name = "ID_ENCARGADO_MANTENIMIENTO", referencedColumnName = "DUI")
     @ManyToOne(optional = false)
     private PersonalMantenimiento idEncargadoMantenimiento;
-    @JoinColumn(name = "ID_EQUIPO", referencedColumnName = "ID_EQUIPO")
-    @ManyToOne(optional = false)
-    private DetallePeticion idEquipo;
     @JoinColumn(name = "ID_ESTADO", referencedColumnName = "ID")
     @ManyToOne(optional = false)
     private Estado idEstado;
-    @JoinColumn(name = "ID_PETICION", referencedColumnName = "ID_PETICION")
-    @ManyToOne(optional = false)
-    private DetallePeticion idPeticion;
     @JoinColumn(name = "ID_TIPO_MANTENIMIENTO", referencedColumnName = "ID")
     @ManyToOne(optional = false)
     private TipoMantenimiento idTipoMantenimiento;
@@ -104,6 +101,14 @@ public class OrdenTrabajo implements Serializable {
         this.fechaSalida = fechaSalida;
     }
 
+    public DetallePeticion getIdDetallePeticion() {
+        return idDetallePeticion;
+    }
+
+    public void setIdDetallePeticion(DetallePeticion idDetallePeticion) {
+        this.idDetallePeticion = idDetallePeticion;
+    }
+
     public PersonalMantenimiento getIdEncargadoMantenimiento() {
         return idEncargadoMantenimiento;
     }
@@ -112,28 +117,12 @@ public class OrdenTrabajo implements Serializable {
         this.idEncargadoMantenimiento = idEncargadoMantenimiento;
     }
 
-    public DetallePeticion getIdEquipo() {
-        return idEquipo;
-    }
-
-    public void setIdEquipo(DetallePeticion idEquipo) {
-        this.idEquipo = idEquipo;
-    }
-
     public Estado getIdEstado() {
         return idEstado;
     }
 
     public void setIdEstado(Estado idEstado) {
         this.idEstado = idEstado;
-    }
-
-    public DetallePeticion getIdPeticion() {
-        return idPeticion;
-    }
-
-    public void setIdPeticion(DetallePeticion idPeticion) {
-        this.idPeticion = idPeticion;
     }
 
     public TipoMantenimiento getIdTipoMantenimiento() {

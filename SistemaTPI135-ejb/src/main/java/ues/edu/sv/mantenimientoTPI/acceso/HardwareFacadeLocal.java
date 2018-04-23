@@ -11,11 +11,23 @@ import ues.edu.sv.mantenimientoLib.Hardware;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Local
-public interface HardwareFacadeLocal extends AbstractFacadeInterface<Hardware>{
+public interface HardwareFacadeLocal {
 
-  
+    void create(Hardware hardware);
+
+    void edit(Hardware hardware);
+
+    void remove(Hardware hardware);
+
+    Hardware find(Object id);
+
+    List<Hardware> findAll();
+
+    List<Hardware> findRange(int[] range);
+
+    int count();
     
 }

@@ -12,7 +12,7 @@ import ues.edu.sv.mantenimientoLib.PasosProcedimiento;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Stateless
 public class PasosProcedimientoFacade extends AbstractFacade<PasosProcedimiento> implements PasosProcedimientoFacadeLocal {

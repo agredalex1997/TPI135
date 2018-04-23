@@ -12,7 +12,7 @@ import ues.edu.sv.mantenimientoLib.DetallePeticion;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Stateless
 public class DetallePeticionFacade extends AbstractFacade<DetallePeticion> implements DetallePeticionFacadeLocal {

@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Entity
 @Table(name = "PASOS_PROCEDIMIENTO", catalog = "mantenimientoTpi", schema = "")

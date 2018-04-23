@@ -11,11 +11,23 @@ import ues.edu.sv.mantenimientoLib.OrdenTrabajo;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Local
-public interface OrdenTrabajoFacadeLocal extends AbstractFacadeInterface<OrdenTrabajo>{
+public interface OrdenTrabajoFacadeLocal {
 
-    
+    void create(OrdenTrabajo ordenTrabajo);
+
+    void edit(OrdenTrabajo ordenTrabajo);
+
+    void remove(OrdenTrabajo ordenTrabajo);
+
+    OrdenTrabajo find(Object id);
+
+    List<OrdenTrabajo> findAll();
+
+    List<OrdenTrabajo> findRange(int[] range);
+
+    int count();
     
 }

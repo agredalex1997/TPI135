@@ -12,7 +12,7 @@ import ues.edu.sv.mantenimientoLib.Calendario;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Stateless
 public class CalendarioFacade extends AbstractFacade<Calendario> implements CalendarioFacadeLocal {

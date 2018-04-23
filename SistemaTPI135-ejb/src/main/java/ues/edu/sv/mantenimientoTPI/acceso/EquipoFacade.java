@@ -12,7 +12,7 @@ import ues.edu.sv.mantenimientoLib.Equipo;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Stateless
 public class EquipoFacade extends AbstractFacade<Equipo> implements EquipoFacadeLocal {

@@ -12,7 +12,7 @@ import ues.edu.sv.mantenimientoLib.PersonalMantenimiento;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Stateless
 public class PersonalMantenimientoFacade extends AbstractFacade<PersonalMantenimiento> implements PersonalMantenimientoFacadeLocal {

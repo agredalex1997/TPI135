@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Entity
 @Table(name = "PETICION", catalog = "mantenimientoTpi", schema = "")
@@ -52,7 +52,7 @@ public class Peticion implements Serializable {
     @JoinColumn(name = "ID_ORIGEN", referencedColumnName = "ID")
     @ManyToOne(optional = false)
     private OrigenPeticion idOrigen;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "peticion")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idPeticion")
     private Collection<DetallePeticion> detallePeticionCollection;
 
     public Peticion() {

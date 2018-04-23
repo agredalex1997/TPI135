@@ -12,7 +12,7 @@ import ues.edu.sv.mantenimientoLib.Area;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Stateless
 public class AreaFacade extends AbstractFacade<Area> implements AreaFacadeLocal {

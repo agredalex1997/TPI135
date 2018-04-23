@@ -5,17 +5,29 @@
  */
 package ues.edu.sv.mantenimientoTPI.acceso;
 
-
+import java.util.List;
 import javax.ejb.Local;
 import ues.edu.sv.mantenimientoLib.DetalleEquipo;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Local
-public interface DetalleEquipoFacadeLocal extends AbstractFacadeInterface<DetalleEquipo>{
+public interface DetalleEquipoFacadeLocal {
 
-    
+    void create(DetalleEquipo detalleEquipo);
+
+    void edit(DetalleEquipo detalleEquipo);
+
+    void remove(DetalleEquipo detalleEquipo);
+
+    DetalleEquipo find(Object id);
+
+    List<DetalleEquipo> findAll();
+
+    List<DetalleEquipo> findRange(int[] range);
+
+    int count();
     
 }

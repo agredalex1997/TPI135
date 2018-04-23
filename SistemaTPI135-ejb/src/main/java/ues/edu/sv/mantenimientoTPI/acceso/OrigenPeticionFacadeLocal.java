@@ -11,11 +11,23 @@ import ues.edu.sv.mantenimientoLib.OrigenPeticion;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Local
-public interface OrigenPeticionFacadeLocal extends AbstractFacadeInterface<OrigenPeticion>{
+public interface OrigenPeticionFacadeLocal {
 
-  
+    void create(OrigenPeticion origenPeticion);
+
+    void edit(OrigenPeticion origenPeticion);
+
+    void remove(OrigenPeticion origenPeticion);
+
+    OrigenPeticion find(Object id);
+
+    List<OrigenPeticion> findAll();
+
+    List<OrigenPeticion> findRange(int[] range);
+
+    int count();
     
 }

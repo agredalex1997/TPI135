@@ -12,7 +12,7 @@ import ues.edu.sv.mantenimientoLib.Hardware;
 
 /**
  *
- * @author kevin
+ * @author esperanza
  */
 @Stateless
 public class HardwareFacade extends AbstractFacade<Hardware> implements HardwareFacadeLocal {
