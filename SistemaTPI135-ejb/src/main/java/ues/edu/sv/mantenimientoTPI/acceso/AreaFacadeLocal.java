@@ -5,7 +5,6 @@
  */
 package ues.edu.sv.mantenimientoTPI.acceso;
 
-import java.util.List;
 import javax.ejb.Local;
 import ues.edu.sv.mantenimientoLib.Area;
 
@@ -14,20 +13,9 @@ import ues.edu.sv.mantenimientoLib.Area;
  * @author esperanza
  */
 @Local
-public interface AreaFacadeLocal {
+public interface AreaFacadeLocal extends AbstractFacadeInterface<Area>{
 
-    void create(Area area);
+    public Area create(Area entity);
 
-    void edit(Area area);
-
-    void remove(Area area);
-
-    Area find(Object id);
-
-    List<Area> findAll();
-
-    List<Area> findRange(int[] range);
-
-    int count();
     
 }

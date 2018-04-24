@@ -14,20 +14,7 @@ import ues.edu.sv.mantenimientoLib.OrigenPeticion;
  * @author esperanza
  */
 @Local
-public interface OrigenPeticionFacadeLocal {
+public interface OrigenPeticionFacadeLocal extends AbstractFacadeInterface<OrigenPeticion>{
 
-    void create(OrigenPeticion origenPeticion);
-
-    void edit(OrigenPeticion origenPeticion);
-
-    void remove(OrigenPeticion origenPeticion);
-
-    OrigenPeticion find(Object id);
-
-    List<OrigenPeticion> findAll();
-
-    List<OrigenPeticion> findRange(int[] range);
-
-    int count();
     
 }

@@ -14,20 +14,7 @@ import ues.edu.sv.mantenimientoLib.Equipo;
  * @author esperanza
  */
 @Local
-public interface EquipoFacadeLocal {
+public interface EquipoFacadeLocal extends AbstractFacadeInterface<Equipo>{
 
-    void create(Equipo equipo);
-
-    void edit(Equipo equipo);
-
-    void remove(Equipo equipo);
-
-    Equipo find(Object id);
-
-    List<Equipo> findAll();
-
-    List<Equipo> findRange(int[] range);
-
-    int count();
     
 }

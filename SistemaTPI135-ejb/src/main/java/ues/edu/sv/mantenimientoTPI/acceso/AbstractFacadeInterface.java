@@ -10,25 +10,28 @@ import java.util.List;
 /**
  *
  * @author kevin
+ * @param <T>
  */
 public interface AbstractFacadeInterface<T>{
+      
     T create(T entity);
 
     T edit(T entity);
 
     T remove(T entity);
 
-    boolean crear(T entity);
-
-    boolean modificar(T entity);
-
-    boolean eliminar(T entity);
-
+    boolean crear (T entity);
+    
+    boolean modificar (T entity);
+    
+    boolean eliminar (T entity);
+    
     T find(Object id);
 
     List<T> findAll();
 
-    List<T> findRange(int min, int max);
+    List<T> findRange(int[] range);
 
     int count();
+
 }
