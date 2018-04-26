@@ -30,4 +30,8 @@ public interface PeticionFacadeLocal {
 
     int count();
     
+    List<Peticion> findRange(int lower, int higher);
+    
+    List<Peticion> findByName(String nombre);
+    
 }

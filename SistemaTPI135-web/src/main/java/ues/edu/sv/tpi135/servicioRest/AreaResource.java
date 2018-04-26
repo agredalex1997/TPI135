@@ -88,4 +88,29 @@ public class AreaResource implements Serializable{
         return respuesta;
     }
     
+    @Path("/{lower}/{higher}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Area> findRange(@PathParam("lower") int lower, @PathParam("higher") int higher) {
+      List listaAreas = null;
+      if (ejbArea != null) {
+        listaAreas = ejbArea.findRange(lower, higher);
+      }
+      
+      return listaAreas;
+    }
+    
+    @Path("/findByName/{name}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Area> findByName(@PathParam("name") String name) {
+      List listaAreas = null;
+      
+      if (ejbArea != null) {
+        listaAreas = ejbArea.findByName(name);
+      }
+      
+      return listaAreas;
+    }
+    
 }

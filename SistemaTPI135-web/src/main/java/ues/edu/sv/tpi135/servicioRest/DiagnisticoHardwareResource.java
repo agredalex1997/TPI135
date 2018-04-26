@@ -87,4 +87,29 @@ public class DiagnisticoHardwareResource implements Serializable{
         }
         return respuesta;
     }
+    
+    @Path("/{lower}/{higher}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<DiagnosticoHardware> findRange(@PathParam("lower") int lower, @PathParam("higher") int higher) {
+      List listaDiagnosticoHardware = null;
+      if (ejbDiagnosticoHardware != null) {
+        listaDiagnosticoHardware = ejbDiagnosticoHardware.findRange(lower, higher);
+      }
+      
+      return listaDiagnosticoHardware;
+    }
+    
+    @Path("/findByName/{name}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<DiagnosticoHardware> findByName(@PathParam("name") String name) {
+      List listaDiagnosticoHardware = null;
+      
+      if (ejbDiagnosticoHardware != null) {
+        listaDiagnosticoHardware = ejbDiagnosticoHardware.findByName(name);
+      }
+      
+      return listaDiagnosticoHardware;
+    }
 }

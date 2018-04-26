@@ -30,4 +30,8 @@ public interface OrdenTrabajoFacadeLocal {
 
     int count();
     
+    List<OrdenTrabajo> findRange(int lower, int higher);
+    
+    List<OrdenTrabajo> findByName(String nombre);
+    
 }

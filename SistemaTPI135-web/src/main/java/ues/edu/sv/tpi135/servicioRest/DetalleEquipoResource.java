@@ -85,4 +85,29 @@ public class DetalleEquipoResource implements Serializable{
         }
         return respuesta;
     }
+    
+    @Path("/{lower}/{higher}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<DetalleEquipo> findRange(@PathParam("lower") int lower, @PathParam("higher") int higher) {
+      List listaDetalleEquipo = null;
+      if (ejbDetalleEquipo != null) {
+        listaDetalleEquipo = ejbDetalleEquipo.findRange(lower, higher);
+      }
+      
+      return listaDetalleEquipo;
+    }
+    
+    @Path("/findByName/{name}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<DetalleEquipo> findByName(@PathParam("name") String name) {
+      List listaDetalleEquipo = null;
+      
+      if (ejbDetalleEquipo != null) {
+        listaDetalleEquipo = ejbDetalleEquipo.findByName(name);
+      }
+      
+      return listaDetalleEquipo;
+    }
 }

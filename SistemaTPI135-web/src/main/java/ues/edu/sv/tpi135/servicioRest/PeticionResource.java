@@ -87,4 +87,29 @@ public class PeticionResource implements Serializable{
         
         return respuesta;
     }
+    
+    @Path("/{lower}/{higher}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Peticion> findRange(@PathParam("lower") int lower, @PathParam("higher") int higher) {
+      List listaPeticion = null;
+      if (ejbPeticion != null) {
+        listaPeticion = ejbPeticion.findRange(lower, higher);
+      }
+      
+      return listaPeticion;
+    }
+    
+    @Path("/findByName/{name}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Peticion> findByName(@PathParam("name") String name) {
+      List listaPeticion = null;
+      
+      if (ejbPeticion != null) {
+        listaPeticion = ejbPeticion.findByName(name);
+      }
+      
+      return listaPeticion;
+    }
 }

@@ -30,4 +30,8 @@ public interface ExcepcionCalendarioFacadeLocal {
 
     int count();
     
+    List<ExcepcionCalendario> findRange(int lower, int higher);
+    
+    List<ExcepcionCalendario> findByName(String nombre);
+    
 }

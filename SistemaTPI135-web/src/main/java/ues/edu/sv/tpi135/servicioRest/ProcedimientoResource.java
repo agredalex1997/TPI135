@@ -31,7 +31,7 @@ public class ProcedimientoResource implements Serializable{
     public List<Procedimiento> FindAll(){
         List listaProcedimiento = null;
         if(ejbProcedimiento != null){
-            return ejbProcedimiento.findAll();
+            listaProcedimiento = ejbProcedimiento.findAll();
         }
         return listaProcedimiento;
     }
@@ -82,5 +82,30 @@ public class ProcedimientoResource implements Serializable{
         }
         
         return respuesta;
+    }
+    
+    @Path("/{lower}/{higher}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Procedimiento> findRange(@PathParam("lower") int lower, @PathParam("higher") int higher) {
+      List listaProcedimiento = null;
+      if (ejbProcedimiento != null) {
+        listaProcedimiento = ejbProcedimiento.findRange(lower, higher);
+      }
+      
+      return listaProcedimiento;
+    }
+    
+    @Path("/findByName/{name}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Procedimiento> findByName(@PathParam("name") String name) {
+      List listaProcedimiento = null;
+      
+      if (ejbProcedimiento != null) {
+        listaProcedimiento = ejbProcedimiento.findByName(name);
+      }
+      
+      return listaProcedimiento;
     }
 }

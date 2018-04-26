@@ -87,4 +87,29 @@ public class ExcepcionCalendarioResource implements Serializable{
         }
         return respuesta;
     }
+    
+    @Path("/{lower}/{higher}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<ExcepcionCalendario> findRange(@PathParam("lower") int lower, @PathParam("higher") int higher) {
+      List listaExcepcionCalendario = null;
+      if (ejbExcepcionCalendario != null) {
+        listaExcepcionCalendario = ejbExcepcionCalendario.findRange(lower, higher);
+      }
+      
+      return listaExcepcionCalendario;
+    }
+    
+    @Path("/findByName/{name}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<ExcepcionCalendario> findByName(@PathParam("name") String name) {
+      List listaExcepcionCalendario = null;
+      
+      if (ejbExcepcionCalendario != null) {
+        listaExcepcionCalendario = ejbExcepcionCalendario.findByName(name);
+      }
+      
+      return listaExcepcionCalendario;
+    }
 }

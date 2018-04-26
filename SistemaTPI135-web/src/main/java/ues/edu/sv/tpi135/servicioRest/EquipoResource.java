@@ -86,4 +86,29 @@ public class EquipoResource implements Serializable{
         }
         return respuesta;
     }
+    
+    @Path("/{lower}/{higher}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Equipo> findRange(@PathParam("lower") int lower, @PathParam("higher") int higher) {
+      List listaEquipo = null;
+      if (ejbEquipo != null) {
+        listaEquipo = ejbEquipo.findRange(lower, higher);
+      }
+      
+      return listaEquipo;
+    }
+    
+    @Path("/findByName/{name}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Equipo> findByName(@PathParam("name") String name) {
+      List listaEquipo = null;
+      
+      if (ejbEquipo != null) {
+        listaEquipo = ejbEquipo.findByName(name);
+      }
+      
+      return listaEquipo;
+    }
 }

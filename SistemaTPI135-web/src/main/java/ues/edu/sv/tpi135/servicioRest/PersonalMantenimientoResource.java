@@ -31,7 +31,7 @@ public class PersonalMantenimientoResource implements Serializable{
     public List<PersonalMantenimiento> findAll(){
         List listaPersonalMantenimineto = null;
         if(ejbPersonalMantenimiento != null){
-            return ejbPersonalMantenimiento.findAll();
+            listaPersonalMantenimineto = ejbPersonalMantenimiento.findAll();
         }
         return listaPersonalMantenimineto;
     }
@@ -83,5 +83,30 @@ public class PersonalMantenimientoResource implements Serializable{
         }
         
         return respuesta;
+    }
+    
+    @Path("/{lower}/{higher}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<PersonalMantenimiento> findRange(@PathParam("lower") int lower, @PathParam("higher") int higher) {
+      List listaPersonalMantenimiento = null;
+      if (ejbPersonalMantenimiento != null) {
+        listaPersonalMantenimiento = ejbPersonalMantenimiento.findRange(lower, higher);
+      }
+      
+      return listaPersonalMantenimiento;
+    }
+    
+    @Path("/findByName/{name}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<PersonalMantenimiento> findByName(@PathParam("name") String name) {
+      List listaPersonalMantenimiento = null;
+      
+      if (ejbPersonalMantenimiento != null) {
+        listaPersonalMantenimiento = ejbPersonalMantenimiento.findByName(name);
+      }
+      
+      return listaPersonalMantenimiento;
     }
 }

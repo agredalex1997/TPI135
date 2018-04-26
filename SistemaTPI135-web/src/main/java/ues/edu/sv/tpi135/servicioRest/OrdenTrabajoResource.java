@@ -87,4 +87,29 @@ public class OrdenTrabajoResource implements Serializable{
         
         return respuesta;
     }
+    
+    @Path("/{lower}/{higher}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<OrdenTrabajo> findRange(@PathParam("lower") int lower, @PathParam("higher") int higher) {
+      List listaOrdenTrabajo = null;
+      if (ejbOrdenTrabajo != null) {
+        listaOrdenTrabajo = ejbOrdenTrabajo.findRange(lower, higher);
+      }
+      
+      return listaOrdenTrabajo;
+    }
+    
+    @Path("/findByName/{name}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<OrdenTrabajo> findByName(@PathParam("name") String name) {
+      List listaOrdenTrabajo = null;
+      
+      if (ejbOrdenTrabajo != null) {
+        listaOrdenTrabajo = ejbOrdenTrabajo.findByName(name);
+      }
+      
+      return listaOrdenTrabajo;
+    }
 }

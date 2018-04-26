@@ -15,7 +15,7 @@ import ues.edu.sv.mantenimientoLib.Area;
  */
 @Local
 public interface AreaFacadeLocal {
-
+    
     void create(Area area);
 
     void edit(Area area);
@@ -30,4 +30,7 @@ public interface AreaFacadeLocal {
 
     int count();
     
+    List<Area> findRange(int lower, int higher);
+    
+    List<Area> findByName(String nombre);
 }

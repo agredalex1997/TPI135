@@ -31,7 +31,7 @@ public class OrigenPeticionResource implements Serializable{
     public List<OrigenPeticion> findAll(){
         List listaOrigenPeticion = null;
         if(ejbOrigenPeticion != null){
-            return ejbOrigenPeticion.findAll();
+            listaOrigenPeticion = ejbOrigenPeticion.findAll();
         }
         return listaOrigenPeticion;
     }
@@ -81,5 +81,30 @@ public class OrigenPeticionResource implements Serializable{
             respuesta = Response.status(Response.Status.CREATED).entity(newOrigenPeticion).build();
         }
         return respuesta;
+    }
+    
+    @Path("/{lower}/{higher}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<OrigenPeticion> findRange(@PathParam("lower") int lower, @PathParam("higher") int higher) {
+      List listaOrigenPeticion = null;
+      if (ejbOrigenPeticion != null) {
+        listaOrigenPeticion = ejbOrigenPeticion.findRange(lower, higher);
+      }
+      
+      return listaOrigenPeticion;
+    }
+    
+    @Path("/findByName/{name}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<OrigenPeticion> findByName(@PathParam("name") String name) {
+      List listaOrigenPeticion = null;
+      
+      if (ejbOrigenPeticion != null) {
+        listaOrigenPeticion = ejbOrigenPeticion.findByName(name);
+      }
+      
+      return listaOrigenPeticion;
     }
 }

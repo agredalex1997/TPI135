@@ -16,7 +16,6 @@ import ues.edu.sv.mantenimientoLib.Area;
  */
 @Stateless
 public class AreaFacade extends AbstractFacade<Area> implements AreaFacadeLocal {
-
     @PersistenceContext(unitName = "ues.edu.sv.tpi135_SistemaTPI135-ejb_ejb_1.0-SNAPSHOTPU")
     private EntityManager em;
 
@@ -27,6 +26,5 @@ public class AreaFacade extends AbstractFacade<Area> implements AreaFacadeLocal 
 
     public AreaFacade() {
         super(Area.class);
-    }
-    
+    }    
 }

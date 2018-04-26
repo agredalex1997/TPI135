@@ -87,4 +87,29 @@ public class DiagnosticoSoftwareResource implements Serializable{
         }
         return respuesta;
     }
+    
+    @Path("/{lower}/{higher}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<DiagnosticoSoftware> findRange(@PathParam("lower") int lower, @PathParam("higher") int higher) {
+      List listaDiagnosticoSoftware = null;
+      if (ejbDiagnosticoSoftware != null) {
+        listaDiagnosticoSoftware = ejbDiagnosticoSoftware.findRange(lower, higher);
+      }
+      
+      return listaDiagnosticoSoftware;
+    }
+    
+    @Path("/findByName/{name}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<DiagnosticoSoftware> findByName(@PathParam("name") String name) {
+      List listaDiagnosticoSoftware = null;
+      
+      if (ejbDiagnosticoSoftware != null) {
+        listaDiagnosticoSoftware = ejbDiagnosticoSoftware.findByName(name);
+      }
+      
+      return listaDiagnosticoSoftware;
+    }
 }

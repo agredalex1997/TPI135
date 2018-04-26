@@ -30,4 +30,8 @@ public interface CalendarioFacadeLocal {
 
     int count();
     
+    List<Calendario> findRange(int lower, int higher);
+    
+    List<Calendario> findByName(String nombre);
+    
 }

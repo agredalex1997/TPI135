@@ -86,4 +86,29 @@ public class HardwareResource implements Serializable{
         }
         return respuesta;
     }
+    
+    @Path("/{lower}/{higher}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Hardware> findRange(@PathParam("lower") int lower, @PathParam("higher") int higher) {
+      List listaHardware = null;
+      if (ejbHardware != null) {
+        listaHardware = ejbHardware.findRange(lower, higher);
+      }
+      
+      return listaHardware;
+    }
+    
+    @Path("/findByName/{name}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Hardware> findByName(@PathParam("name") String name) {
+      List listaHradware = null;
+      
+      if (ejbHardware != null) {
+        listaHradware = ejbHardware.findByName(name);
+      }
+      
+      return listaHradware;
+    }
 }

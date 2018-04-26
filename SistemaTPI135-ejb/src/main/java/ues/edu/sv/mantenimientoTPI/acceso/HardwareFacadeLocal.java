@@ -30,4 +30,8 @@ public interface HardwareFacadeLocal {
 
     int count();
     
+    List<Hardware> findRange(int lower, int higher);
+    
+    List<Hardware> findByName(String nombre);
+    
 }

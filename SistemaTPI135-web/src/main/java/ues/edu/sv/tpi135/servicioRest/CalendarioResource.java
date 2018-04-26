@@ -30,11 +30,11 @@ public class CalendarioResource implements Serializable{
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Calendario> findAll(){
-        List listaPasos = null;
+        List listaCalendario = null;
         if(ejbCalendario != null){
-            return ejbCalendario.findAll();
+            listaCalendario =  ejbCalendario.findAll();
         }
-        return listaPasos;
+        return listaCalendario;
     }
     
     @Path("/count")
@@ -84,5 +84,30 @@ public class CalendarioResource implements Serializable{
             respuesta = Response.status(Response.Status.OK).build();
         }
         return respuesta;
+    }
+    
+    @Path("/{lower}/{higher}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Calendario> findRange(@PathParam("lower") int lower, @PathParam("higher") int higher) {
+      List listaCalendario = null;
+      if (ejbCalendario != null) {
+        listaCalendario = ejbCalendario.findRange(lower, higher);
+      }
+      
+      return listaCalendario;
+    }
+    
+    @Path("/findByName/{name}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Calendario> findByName(@PathParam("name") String name) {
+      List listaCalendario = null;
+      
+      if (ejbCalendario != null) {
+        listaCalendario = ejbCalendario.findByName(name);
+      }
+      
+      return listaCalendario;
     }
 }

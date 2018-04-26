@@ -30,4 +30,8 @@ public interface MarcaFacadeLocal {
 
     int count();
     
+    List<Marca> findRange(int lower, int higher);
+    
+    List<Marca> findByName(String nombre);
+    
 }

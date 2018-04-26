@@ -30,4 +30,8 @@ public interface DiagnosticoSoftwareFacadeLocal {
 
     int count();
     
+    List<DiagnosticoSoftware> findRange(int lower, int higher);
+    
+    List<DiagnosticoSoftware> findByName(String nombre);
+    
 }

@@ -30,4 +30,8 @@ public interface PasosProcedimientoFacadeLocal {
 
     int count();
     
+    List<PasosProcedimiento> findRange(int lower, int higher);
+    
+    List<PasosProcedimiento> findByName(String nombre);
+    
 }

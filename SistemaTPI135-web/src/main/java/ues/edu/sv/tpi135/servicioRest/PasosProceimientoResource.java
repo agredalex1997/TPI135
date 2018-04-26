@@ -86,4 +86,29 @@ public class PasosProceimientoResource implements Serializable{
         }
         return respuesta;
     }
+    
+    @Path("/{lower}/{higher}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<PasosProcedimiento> findRange(@PathParam("lower") int lower, @PathParam("higher") int higher) {
+      List listaPasosProcedimiento = null;
+      if (ejbPasosPrecedimiento != null) {
+        listaPasosProcedimiento = ejbPasosPrecedimiento.findRange(lower, higher);
+      }
+      
+      return listaPasosProcedimiento;
+    }
+    
+    @Path("/findByName/{name}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<PasosProcedimiento> findByName(@PathParam("name") String name) {
+      List listaPasosProcedimiento = null;
+      
+      if (ejbPasosPrecedimiento != null) {
+        listaPasosProcedimiento = ejbPasosPrecedimiento.findByName(name);
+      }
+      
+      return listaPasosProcedimiento;
+    }
 }

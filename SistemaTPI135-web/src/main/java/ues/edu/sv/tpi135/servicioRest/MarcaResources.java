@@ -86,4 +86,29 @@ public class MarcaResources implements Serializable{
         }
         return respuesta;
     }
+    
+    @Path("/{lower}/{higher}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Marca> findRange(@PathParam("lower") int lower, @PathParam("higher") int higher) {
+      List listaMarca = null;
+      if (ejbMarca != null) {
+        listaMarca = ejbMarca.findRange(lower, higher);
+      }
+      
+      return listaMarca;
+    }
+    
+    @Path("/findByName/{name}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Marca> findByName(@PathParam("name") String name) {
+      List listaMarca = null;
+      
+      if (ejbMarca != null) {
+        listaMarca = ejbMarca.findByName(name);
+      }
+      
+      return listaMarca;
+    }
 }

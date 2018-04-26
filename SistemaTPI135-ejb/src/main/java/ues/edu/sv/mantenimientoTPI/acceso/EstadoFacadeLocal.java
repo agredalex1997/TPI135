@@ -30,4 +30,8 @@ public interface EstadoFacadeLocal {
 
     int count();
     
+    List<Estado> findRange(int lower, int higher);
+    
+    List<Estado> findByName(String nombre);
+    
 }

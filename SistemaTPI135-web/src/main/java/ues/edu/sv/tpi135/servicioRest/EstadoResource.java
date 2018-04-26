@@ -31,7 +31,7 @@ public class EstadoResource implements Serializable{
     public List<Estado> findAll(){
         List listaEstado = null;
         if(ejbEstado != null){
-            return ejbEstado.findAll();
+            listaEstado = ejbEstado.findAll();
         }
         return listaEstado;
     }
@@ -81,5 +81,30 @@ public class EstadoResource implements Serializable{
             respuesta = Response.status(Response.Status.OK).build();
         }
         return respuesta;
+    }
+    
+    @Path("/{lower}/{higher}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Estado> findRange(@PathParam("lower") int lower, @PathParam("higher") int higher) {
+      List listaEstado = null;
+      if (ejbEstado != null) {
+        listaEstado = ejbEstado.findRange(lower, higher);
+      }
+      
+      return listaEstado;
+    }
+    
+    @Path("/findByName/{name}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Estado> findByName(@PathParam("name") String name) {
+      List listaEstado = null;
+      
+      if (ejbEstado != null) {
+        listaEstado = ejbEstado.findByName(name);
+      }
+      
+      return listaEstado;
     }
 }

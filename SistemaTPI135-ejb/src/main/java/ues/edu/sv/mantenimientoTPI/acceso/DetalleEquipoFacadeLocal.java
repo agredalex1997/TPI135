@@ -30,4 +30,8 @@ public interface DetalleEquipoFacadeLocal {
 
     int count();
     
+    List<DetalleEquipo> findRange(int lower, int higher);
+    
+    List<DetalleEquipo> findByName(String nombre);
+    
 }

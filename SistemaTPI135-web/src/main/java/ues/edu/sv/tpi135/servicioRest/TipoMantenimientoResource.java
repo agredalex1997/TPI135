@@ -31,7 +31,7 @@ public class TipoMantenimientoResource implements Serializable{
     public List<TipoMantenimiento> findAll(){
         List listaTipoMantenimiento = null;
         if(ejbTipomantenimiento != null){
-            return ejbTipomantenimiento.findAll();
+            listaTipoMantenimiento = ejbTipomantenimiento.findAll();
         }
         return listaTipoMantenimiento;
     }
@@ -81,5 +81,30 @@ public class TipoMantenimientoResource implements Serializable{
             respuesta = Response.status(Response.Status.OK).build();
         }
         return respuesta;
+    }
+    
+    @Path("/{lower}/{higher}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<TipoMantenimiento> findRange(@PathParam("lower") int lower, @PathParam("higher") int higher) {
+      List listaTipoMantenimiento = null;
+      if (ejbTipomantenimiento != null) {
+        listaTipoMantenimiento = ejbTipomantenimiento.findRange(lower, higher);
+      }
+      
+      return listaTipoMantenimiento;
+    }
+    
+    @Path("/findByName/{name}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<TipoMantenimiento> findByName(@PathParam("name") String name) {
+      List listaTIpoMantenimiento = null;
+      
+      if (ejbTipomantenimiento != null) {
+        listaTIpoMantenimiento = ejbTipomantenimiento.findByName(name);
+      }
+      
+      return listaTIpoMantenimiento;
     }
 }

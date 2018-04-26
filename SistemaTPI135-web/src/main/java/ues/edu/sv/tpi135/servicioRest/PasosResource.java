@@ -31,7 +31,7 @@ public class PasosResource implements Serializable{
     public List<Pasos> findAll(){
         List listaPasos = null;
         if(ejbPasos != null){
-            return ejbPasos.findAll();
+            listaPasos = ejbPasos.findAll();
         }
         return listaPasos;
     }
@@ -81,5 +81,30 @@ public class PasosResource implements Serializable{
             respuesta = Response.status(Response.Status.OK).build();
         }
         return respuesta;
+    }
+    
+    @Path("/{lower}/{higher}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Pasos> findRange(@PathParam("lower") int lower, @PathParam("higher") int higher) {
+      List listaPasos = null;
+      if (ejbPasos != null) {
+        listaPasos = ejbPasos.findRange(lower, higher);
+      }
+      
+      return listaPasos;
+    }
+    
+    @Path("/findByName/{name}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Pasos> findByName(@PathParam("name") String name) {
+      List listaPasos = null;
+      
+      if (ejbPasos != null) {
+        listaPasos = ejbPasos.findByName(name);
+      }
+      
+      return listaPasos;
     }
 }

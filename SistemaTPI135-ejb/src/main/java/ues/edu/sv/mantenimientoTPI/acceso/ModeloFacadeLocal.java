@@ -30,4 +30,8 @@ public interface ModeloFacadeLocal {
 
     int count();
     
+    List<Modelo> findRange(int lower, int higher);
+    
+    List<Modelo> findByName(String nombre);
+    
 }

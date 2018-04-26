@@ -10,6 +10,7 @@ import java.util.List;
 /**
  *
  * @author kevin
+ * @Param <T>
  */
 public interface AbstractFacadeInterface<T>{
     T create(T entity);
@@ -28,7 +29,11 @@ public interface AbstractFacadeInterface<T>{
 
     List<T> findAll();
 
-    List<T> findRange(int min, int max);
+    List<T> findRange(int[] range);
 
     int count();
+    
+    List<T> findByName(String name);
+    
+    List<T> findRange(int min, int max);
 }

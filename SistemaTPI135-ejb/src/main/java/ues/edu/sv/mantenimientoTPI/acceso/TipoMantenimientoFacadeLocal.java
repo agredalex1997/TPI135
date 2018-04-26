@@ -30,4 +30,8 @@ public interface TipoMantenimientoFacadeLocal {
 
     int count();
     
+    List<TipoMantenimiento> findRange(int lower, int higher);
+    
+    List<TipoMantenimiento> findByName(String nombre);
+    
 }
