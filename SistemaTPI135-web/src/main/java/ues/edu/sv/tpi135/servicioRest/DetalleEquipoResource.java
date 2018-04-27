@@ -15,7 +15,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import ues.edu.sv.mantenimientoTPI.acceso.DetalleEquipoFacadeLocal;
 import ues.edu.sv.mantenimientoLib.DetalleEquipo;
-import ues.edu.sv.mantenimientoLib.DetalleEquipoPK;
 
 /**
  *
@@ -52,9 +51,9 @@ public class DetalleEquipoResource implements Serializable{
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public DetalleEquipo findById(@PathParam("idEqipo") int idEquipo, @PathParam("idHardware") int idHardware){
-        DetalleEquipoPK detalleEquipoPk = new DetalleEquipoPK(idEquipo, idHardware);
         if(ejbDetalleEquipo != null){
-            return ejbDetalleEquipo.find(detalleEquipoPk);
+            DetalleEquipo detalleEquipo = new DetalleEquipo(idEquipo, idHardware);
+            return ejbDetalleEquipo.find(detalleEquipo);
         }
         return new DetalleEquipo();
     }
@@ -94,7 +93,6 @@ public class DetalleEquipoResource implements Serializable{
       if (ejbDetalleEquipo != null) {
         listaDetalleEquipo = ejbDetalleEquipo.findRange(lower, higher);
       }
-      
       return listaDetalleEquipo;
     }
     

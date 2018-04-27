@@ -23,7 +23,7 @@ import ues.edu.sv.mantenimientoLib.Peticion;
  *
  * @author mateo
  */
-@Path("detalleOrden")
+@Path("detallePeticion")
 public class DetallePeticionResource implements Serializable{
     
     @EJB
@@ -70,6 +70,7 @@ public class DetallePeticionResource implements Serializable{
         Response respuesta = Response.status(Response.Status.NOT_FOUND).build();
         if (ejbDetallePeticion != null) {
             DetallePeticion removeDetallePeticion = new DetallePeticion(idDetallePeticion);
+            ejbDetallePeticion.remove(removeDetallePeticion);
             respuesta = Response.status(Response.Status.OK).build();
         }
         return respuesta;
