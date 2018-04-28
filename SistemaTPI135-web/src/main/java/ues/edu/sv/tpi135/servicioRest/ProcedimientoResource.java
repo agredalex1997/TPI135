@@ -26,6 +26,7 @@ public class ProcedimientoResource implements Serializable{
     @EJB
     private ProcedimientoFacadeLocal ejbProcedimiento;
     
+    @Path("/findAll")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Procedimiento> FindAll(){

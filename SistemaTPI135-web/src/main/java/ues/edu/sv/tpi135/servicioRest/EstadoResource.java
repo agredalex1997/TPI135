@@ -26,6 +26,7 @@ public class EstadoResource implements Serializable{
     @EJB
     private EstadoFacadeLocal ejbEstado;
     
+    @Path("/findAll")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Estado> findAll(){

@@ -26,6 +26,7 @@ public class OrigenPeticionResource implements Serializable{
     @EJB
     private OrigenPeticionFacadeLocal ejbOrigenPeticion;
     
+    @Path("/findAll")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<OrigenPeticion> findAll(){

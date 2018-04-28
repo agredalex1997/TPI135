@@ -26,6 +26,7 @@ public class DetalleEquipoResource implements Serializable{
     @EJB
     private DetalleEquipoFacadeLocal ejbDetalleEquipo;
     
+    @Path("/findAll")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<DetalleEquipo> findAll(){

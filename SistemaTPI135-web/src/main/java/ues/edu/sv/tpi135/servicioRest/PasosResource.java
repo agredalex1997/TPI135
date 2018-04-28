@@ -26,6 +26,7 @@ public class PasosResource implements Serializable{
     @EJB
     private PasosFacadeLocal ejbPasos;
     
+    @Path("/findAll")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Pasos> findAll(){

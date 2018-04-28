@@ -27,6 +27,7 @@ public class CalendarioResource implements Serializable{
     @EJB
     private CalendarioFacadeLocal ejbCalendario;
     
+    @Path("/findAll")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Calendario> findAll(){

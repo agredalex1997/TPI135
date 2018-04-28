@@ -26,6 +26,7 @@ public class TipoMantenimientoResource implements Serializable{
     @EJB
     private TipoMantenimientoFacadeLocal ejbTipomantenimiento;
     
+    @Path("/findAll")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<TipoMantenimiento> findAll(){
