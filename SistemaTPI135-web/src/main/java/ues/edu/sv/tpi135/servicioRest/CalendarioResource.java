@@ -16,7 +16,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import ues.edu.sv.mantenimientoTPI.acceso.CalendarioFacadeLocal;
 import ues.edu.sv.mantenimientoLib.Calendario;
-import ues.edu.sv.mantenimientoLib.CalendarioPK;
 
 /**
  *
@@ -49,13 +48,13 @@ public class CalendarioResource implements Serializable{
         return count;
     }
     
-    @Path("/{fecha}/{idEquipo}")
+    @Path("/{idCalendario}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Calendario findById(@PathParam("fecha") Date fecha, @PathParam("idEquipo") int idEquipo){
+    public Calendario findById(@PathParam("idCalendario") int idCalendario){
         if(ejbCalendario != null){
-            CalendarioPK calendarioPk = new CalendarioPK(fecha, idEquipo);
-            return ejbCalendario.find(calendarioPk);
+            Calendario calendario = new Calendario(idCalendario);
+            return ejbCalendario.find(calendario);
         }
         return new Calendario();
     }
@@ -75,10 +74,10 @@ public class CalendarioResource implements Serializable{
         return respuesta;
     } 
     
-    @Path("/remove/{fecha}/{idEquipo}")
+    @Path("/remove/{idCalendario}")
     @DELETE
-    public Response remove(@PathParam("fecha") Date fecha, @PathParam("idEquipo") int idEquipo){
-        Calendario removeCalendario = new Calendario(fecha, idEquipo);
+    public Response remove(@PathParam("idEquipo") int idCalendario){
+        Calendario removeCalendario = new Calendario(idCalendario);
         Response respuesta = Response.status(Response.Status.NOT_FOUND).build();
         if(ejbCalendario != null){
             ejbCalendario.remove(removeCalendario);

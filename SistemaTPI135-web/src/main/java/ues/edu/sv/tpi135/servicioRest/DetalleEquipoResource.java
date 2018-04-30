@@ -15,6 +15,9 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import ues.edu.sv.mantenimientoTPI.acceso.DetalleEquipoFacadeLocal;
 import ues.edu.sv.mantenimientoLib.DetalleEquipo;
+import ues.edu.sv.mantenimientoLib.Equipo;
+import ues.edu.sv.mantenimientoLib.Hardware;
+import ues.edu.sv.mantenimientoLib.Modelo;
 
 /**
  *
@@ -48,25 +51,25 @@ public class DetalleEquipoResource implements Serializable{
         return count;
     }
     
-    @Path("/{idEquipo}/{idHardware}")
+    @Path("/{idDetalleEquipo}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public DetalleEquipo findById(@PathParam("idEqipo") int idEquipo, @PathParam("idHardware") int idHardware){
+    public DetalleEquipo findById(@PathParam("idDetalleEqipo") Integer idDetalleEquipo){
         if(ejbDetalleEquipo != null){
-            DetalleEquipo detalleEquipo = new DetalleEquipo(idEquipo, idHardware);
+            DetalleEquipo detalleEquipo = new DetalleEquipo(idDetalleEquipo);
             return ejbDetalleEquipo.find(detalleEquipo);
         }
         return new DetalleEquipo();
     }
     
-    @Path("/create/{idEquipo}/{idHardware}")
+    @Path("/create/{noInventario}/{noSerie}/{tamanio}/{observaciones}/{idEquipo}/{idHardware}/{idModelo}")
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response create(@PathParam("idEqipo") int idEquipo, @PathParam("idHardware") int idHardware){
+    public Response create(@PathParam("noInventario") Integer noInventario, @PathParam("noSerie") Integer noSerie, @PathParam("tamanio") Integer tamanio, @PathParam("observaciones") String observaciones, @PathParam("idEqipo") Equipo idEquipo, @PathParam("idHardware") Hardware idHardware, @PathParam("idModelo") Modelo idModelo){
         Response respuesta = Response.status(Response.Status.NOT_FOUND).build();
         if(ejbDetalleEquipo != null){
-            DetalleEquipo newDetalleEquipo = new DetalleEquipo(idEquipo, idHardware);
+            DetalleEquipo newDetalleEquipo = new DetalleEquipo(tamanio, noInventario, noSerie, tamanio, observaciones, idEquipo, idHardware, idModelo);
             ejbDetalleEquipo.create(newDetalleEquipo);
             respuesta = Response.status(Response.Status.CREATED).entity(newDetalleEquipo).build();
         }
@@ -74,12 +77,12 @@ public class DetalleEquipoResource implements Serializable{
         return respuesta;
     } 
     
-    @Path("/remove/{idEquipo}/{idHardware}")
+    @Path("/remove/{idDetalleEquipo}")
     @DELETE
-    public Response remove(@PathParam("idEqipo") int idEquipo, @PathParam("idHardware") int idHardware){
+    public Response remove(@PathParam("idEqipo") int idDetalleEquipo){
         Response respuesta = Response.status(Response.Status.NOT_FOUND).build();
         if(ejbDetalleEquipo != null){
-            DetalleEquipo removeDetalleEquipo = new DetalleEquipo(idEquipo, idHardware);
+            DetalleEquipo removeDetalleEquipo = new DetalleEquipo(idDetalleEquipo);
             ejbDetalleEquipo.remove(removeDetalleEquipo);
             respuesta = Response.status(Response.Status.OK).build();
         }
