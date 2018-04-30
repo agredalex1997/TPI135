@@ -29,6 +29,7 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
+        resources.add(org.netbeans.rest.application.config.CorsFliter.class);
         resources.add(ues.edu.sv.tpi135.servicioRest.AreaResource.class);
         resources.add(ues.edu.sv.tpi135.servicioRest.CalendarioResource.class);
         resources.add(ues.edu.sv.tpi135.servicioRest.DetalleEquipoResource.class);
@@ -47,7 +48,6 @@ public class ApplicationConfig extends Application {
         resources.add(ues.edu.sv.tpi135.servicioRest.PasosResource.class);
         resources.add(ues.edu.sv.tpi135.servicioRest.PersonalMantenimientoResource.class);
         resources.add(ues.edu.sv.tpi135.servicioRest.PeticionResource.class);
-        resources.add(ues.edu.sv.tpi135.servicioRest.ProcedimientoResource.class);
         resources.add(ues.edu.sv.tpi135.servicioRest.TipoMantenimientoResource.class);
     }
     
