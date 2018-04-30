@@ -48,6 +48,7 @@ public class ApplicationConfig extends Application {
         resources.add(ues.edu.sv.tpi135.servicioRest.PasosResource.class);
         resources.add(ues.edu.sv.tpi135.servicioRest.PersonalMantenimientoResource.class);
         resources.add(ues.edu.sv.tpi135.servicioRest.PeticionResource.class);
+        resources.add(ues.edu.sv.tpi135.servicioRest.ProcedimientoResource.class);
         resources.add(ues.edu.sv.tpi135.servicioRest.TipoMantenimientoResource.class);
     }
     
