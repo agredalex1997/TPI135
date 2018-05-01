@@ -9,7 +9,5 @@
   <modules>
     <module>SistemaTPI135-ear</module>
     <module>SistemaTPI135-web</module>
-    <module>SistemaTPI135-ejb</module>
-    <module>SistemaTPI135-lib</module>
   </modules>
 </project>

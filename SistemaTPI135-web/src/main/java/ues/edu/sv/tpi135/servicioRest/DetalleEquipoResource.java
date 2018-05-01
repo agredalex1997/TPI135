@@ -8,6 +8,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -111,5 +112,18 @@ public class DetalleEquipoResource implements Serializable{
       }
       
       return listaDetalleEquipo;
+    }
+    
+    @Path("/edit/{noInventario}/{noSerie}/{tamanio}/{observaciones}/{idEquipo}/{idHardware}/{idModelo}")
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response edit(@PathParam("noInventario") Integer noInventario, @PathParam("noSerie") Integer noSerie, @PathParam("tamanio") Integer tamanio, @PathParam("observaciones") String observaciones, @PathParam("idEqipo") Equipo idEquipo, @PathParam("idHardware") Hardware idHardware, @PathParam("idModelo") Modelo idModelo){
+        Response respuesta = Response.status(Response.Status.NOT_FOUND).build();
+        if(ejbDetalleEquipo != null){
+            DetalleEquipo editDetalleEquipo = new DetalleEquipo(tamanio, noInventario, noSerie, tamanio, observaciones, idEquipo, idHardware, idModelo);
+            ejbDetalleEquipo.edit(editDetalleEquipo);
+            respuesta = Response.status(Response.Status.OK).build();
+        }
+        return respuesta;
     }
 }

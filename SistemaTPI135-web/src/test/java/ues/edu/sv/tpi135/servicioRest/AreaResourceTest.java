@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ues.edu.sv.tpi135.servicioRest;
 
 import java.util.ArrayList;
@@ -58,6 +54,7 @@ public class AreaResourceTest {
         Mockito.when(areaResourceMock.create(2, "Fisica")).thenReturn(Response.status(Response.Status.CREATED).build());
         Mockito.when(areaResourceMock.findRange(1, 2)).thenReturn(listaArea);
         Mockito.when(areaResourceMock.findByName("Fisica")).thenReturn(listaArea);
+        Mockito.when(areaResourceMock.edit(2, "Medicina")).thenReturn(Response.status(Response.Status.OK).build());
     }
     
     @After
@@ -167,6 +164,21 @@ public class AreaResourceTest {
         Area expResult = new Area(2, "Fisica");
         List<Area> result = instance.findByName(name);
         assertThat(result, CoreMatchers.hasItems(expResult));
+        //fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of edit method, of class AreaResource.
+     */
+    @Test
+    public void testEdit() {
+        System.out.println("edit");
+        int idArea = 2;
+        String nombreArea = "Medicina";
+        AreaResource instance = areaResourceMock;
+        Response expResult = Response.status(Response.Status.OK).build();
+        Response result = instance.edit(idArea, nombreArea);
+        assertEquals(expResult.getStatus(), result.getStatus());
         //fail("The test case is a prototype.");
     }
     

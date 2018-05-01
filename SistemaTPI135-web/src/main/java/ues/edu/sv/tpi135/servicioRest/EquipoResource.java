@@ -8,6 +8,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -110,5 +111,18 @@ public class EquipoResource implements Serializable{
       }
       
       return listaEquipo;
+    }
+    
+    @Path("/edit/{idEquipo}/{os}/{licencia}")
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response edit(@PathParam("idEquipo") int idEquipo, @PathParam("os") String os, @PathParam("licencia") boolean licencia){       
+        Response respuesta = Response.status(Response.Status.NOT_FOUND).build();
+        if(ejbEquipo != null){
+            Equipo editEquipo = new Equipo(idEquipo, os, licencia);
+            ejbEquipo.edit(editEquipo);
+            respuesta = Response.status(Response.Status.OK).build();   
+        }
+        return respuesta;
     }
 }

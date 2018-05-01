@@ -8,6 +8,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -107,5 +108,18 @@ public class PasosResource implements Serializable{
       }
       
       return listaPasos;
+    }
+    
+    @Path("/edit/{idPaso}/{nombre}/{descripcion}")
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response edit(@PathParam("idPaso") Integer idPaso, @PathParam("nombre") String nombre, @PathParam("descripcion") String descripcion){
+        Response respuesta = Response.status(Response.Status.NOT_FOUND).build();
+        if(ejbPasos != null){
+            Pasos editPaso = new Pasos(idPaso, nombre, descripcion);
+            ejbPasos.edit(editPaso);
+            respuesta = Response.status(Response.Status.OK).build();
+        }
+        return respuesta;
     }
 }

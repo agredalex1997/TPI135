@@ -9,6 +9,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -109,5 +110,18 @@ public class CalendarioResource implements Serializable{
       }
       
       return listaCalendario;
+    }
+    
+    @Path("/edit/{fecha}/{idEquipo}")
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response edit(@PathParam("fecha") Date fecha, @PathParam("idEquipo") int idEquipo){
+        Response respuesta = Response.status(Response.Status.NOT_FOUND).build();
+        if(ejbCalendario != null){
+            Calendario editCalendario = new Calendario(fecha, idEquipo);
+            ejbCalendario.edit(editCalendario);
+            respuesta = Response.status(Response.Status.OK).build();
+        }
+        return respuesta;
     }
 }

@@ -8,6 +8,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -114,5 +115,19 @@ public class DetallePeticionResource implements Serializable{
       }
       
       return listaDetallePeticon;
+    }
+    
+    @Path("/edit/{idDetallePeticionPeticion}/{idPeticion}/{idEquipo}/{observaciones}")
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response edit(@PathParam("idDetallePeticion") Integer idDetallePeticon,@PathParam("idPeticion") Peticion idPeticion, @PathParam("idEquipo") Equipo idEquipo, @PathParam("obsevaciones") String obsevaciones){       
+        Response respuesta = Response.status(Response.Status.NOT_FOUND).build();
+        
+        if(ejbDetallePeticion != null){
+            DetallePeticion editDetallePeticion = new DetallePeticion(idDetallePeticon, idPeticion, idEquipo, obsevaciones);
+            ejbDetallePeticion.edit(editDetallePeticion);
+            respuesta = Response.status(Response.Status.OK).build();
+        }
+        return respuesta;
     }
 }

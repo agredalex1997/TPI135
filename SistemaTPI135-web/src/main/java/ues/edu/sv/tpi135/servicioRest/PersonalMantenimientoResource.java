@@ -8,6 +8,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -80,6 +81,7 @@ public class PersonalMantenimientoResource implements Serializable{
         Response respuesta = Response.status(Response.Status.NOT_FOUND).build();
         if(ejbPersonalMantenimiento != null){
             PersonalMantenimiento newPersonalMantenimiento = new PersonalMantenimiento(dui, nombre, apellido, telefono, email);
+            ejbPersonalMantenimiento.create(newPersonalMantenimiento);
             respuesta = Response.status(Response.Status.CREATED).entity(newPersonalMantenimiento).build();
         }
         
@@ -109,5 +111,21 @@ public class PersonalMantenimientoResource implements Serializable{
       }
       
       return listaPersonalMantenimiento;
+    }
+    
+    @Path("/edit/{dui}/{nombre}/{apellido}/{telefono}/{email}")
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response edit(@PathParam("dui") Integer dui, @PathParam("nombre") String nombre, 
+            @PathParam("apellido") String apellido, @PathParam("telefono") String telefono,
+            @PathParam("email") String email){
+        Response respuesta = Response.status(Response.Status.NOT_FOUND).build();
+        if(ejbPersonalMantenimiento != null){
+            PersonalMantenimiento editPersonalMantenimiento = new PersonalMantenimiento(dui, nombre, apellido, telefono, email);
+            ejbPersonalMantenimiento.edit(editPersonalMantenimiento);
+            respuesta = Response.status(Response.Status.OK).build();
+        }
+        
+        return respuesta;
     }
 }

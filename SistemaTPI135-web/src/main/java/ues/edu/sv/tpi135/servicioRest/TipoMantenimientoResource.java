@@ -8,6 +8,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -107,5 +108,18 @@ public class TipoMantenimientoResource implements Serializable{
       }
       
       return listaTIpoMantenimiento;
+    }
+    
+    @Path("/edit/{idTipoMantenimiento}/{nombre}/{descripcion}")
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response edit(@PathParam("idTipoMantenimiento") Integer idTipoMantenimiento, @PathParam("nombre") String nombre, @PathParam("descripcion") String descripcion){
+        Response respuesta = Response.status(Response.Status.NOT_FOUND).build();
+        if(ejbTipomantenimiento != null){
+            TipoMantenimiento editTipoMtt = new TipoMantenimiento(idTipoMantenimiento, nombre, descripcion);
+            ejbTipomantenimiento.edit(editTipoMtt);
+            respuesta = Response.status(Response.Status.CREATED).entity(editTipoMtt).build();
+        }
+        return respuesta;
     }
 }
