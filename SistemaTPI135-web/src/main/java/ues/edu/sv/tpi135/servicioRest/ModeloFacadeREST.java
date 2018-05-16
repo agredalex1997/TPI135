@@ -26,7 +26,7 @@ import ues.edu.sv.mantenimientoLib.Modelo;
  */
 @Stateless
 @Path("modelo")
-public class ModeloFacadeREST extends AbstractFacade<Modelo> {
+public class ModeloFacadeREST extends AbstractRest<Modelo> {
 
     @PersistenceContext(unitName = "ues.edu.sv.tpi135_SistemaTPI135-ejb_ejb_1.0-SNAPSHOTPU")
     private EntityManager em;

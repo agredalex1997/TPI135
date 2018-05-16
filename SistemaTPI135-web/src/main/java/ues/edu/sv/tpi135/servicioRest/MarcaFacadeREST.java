@@ -26,7 +26,7 @@ import ues.edu.sv.mantenimientoLib.Marca;
  */
 @Stateless
 @Path("marca")
-public class MarcaFacadeREST extends AbstractFacade<Marca> {
+public class MarcaFacadeREST extends AbstractRest<Marca> {
 
     @PersistenceContext(unitName = "ues.edu.sv.tpi135_SistemaTPI135-ejb_ejb_1.0-SNAPSHOTPU")
     private EntityManager em;

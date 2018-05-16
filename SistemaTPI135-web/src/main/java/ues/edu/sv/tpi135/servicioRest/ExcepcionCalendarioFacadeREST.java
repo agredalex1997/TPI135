@@ -27,7 +27,7 @@ import ues.edu.sv.mantenimientoLib.ExcepcionCalendario;
  */
 @Stateless
 @Path("excepcionCalendario")
-public class ExcepcionCalendarioFacadeREST extends AbstractFacade<ExcepcionCalendario> {
+public class ExcepcionCalendarioFacadeREST extends AbstractRest<ExcepcionCalendario> {
 
     @PersistenceContext(unitName = "ues.edu.sv.tpi135_SistemaTPI135-ejb_ejb_1.0-SNAPSHOTPU")
     private EntityManager em;

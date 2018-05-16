@@ -26,7 +26,7 @@ import ues.edu.sv.mantenimientoLib.PersonalMantenimiento;
  */
 @Stateless
 @Path("personalMantenimiento")
-public class PersonalMantenimientoFacadeREST extends AbstractFacade<PersonalMantenimiento> {
+public class PersonalMantenimientoFacadeREST extends AbstractRest<PersonalMantenimiento> {
 
     @PersistenceContext(unitName = "ues.edu.sv.tpi135_SistemaTPI135-ejb_ejb_1.0-SNAPSHOTPU")
     private EntityManager em;

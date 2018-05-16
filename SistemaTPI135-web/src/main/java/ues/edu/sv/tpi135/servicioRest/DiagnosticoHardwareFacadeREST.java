@@ -26,7 +26,7 @@ import ues.edu.sv.mantenimientoLib.DiagnosticoHardware;
  */
 @Stateless
 @Path("diagnosticoHardware")
-public class DiagnosticoHardwareFacadeREST extends AbstractFacade<DiagnosticoHardware> {
+public class DiagnosticoHardwareFacadeREST extends AbstractRest<DiagnosticoHardware> {
 
     @PersistenceContext(unitName = "ues.edu.sv.tpi135_SistemaTPI135-ejb_ejb_1.0-SNAPSHOTPU")
     private EntityManager em;

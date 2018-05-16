@@ -26,7 +26,7 @@ import ues.edu.sv.mantenimientoLib.Calendario;
  */
 @Stateless
 @Path("calendario")
-public class CalendarioFacadeREST extends AbstractFacade<Calendario> {
+public class CalendarioFacadeREST extends AbstractRest<Calendario> {
 
     @PersistenceContext(unitName = "ues.edu.sv.tpi135_SistemaTPI135-ejb_ejb_1.0-SNAPSHOTPU")
     private EntityManager em;

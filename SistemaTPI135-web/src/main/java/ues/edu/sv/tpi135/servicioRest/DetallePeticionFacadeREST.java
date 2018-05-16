@@ -26,7 +26,7 @@ import ues.edu.sv.mantenimientoLib.DetallePeticion;
  */
 @Stateless
 @Path("detallePeticion")
-public class DetallePeticionFacadeREST extends AbstractFacade<DetallePeticion> {
+public class DetallePeticionFacadeREST extends AbstractRest<DetallePeticion> {
 
     @PersistenceContext(unitName = "ues.edu.sv.tpi135_SistemaTPI135-ejb_ejb_1.0-SNAPSHOTPU")
     private EntityManager em;

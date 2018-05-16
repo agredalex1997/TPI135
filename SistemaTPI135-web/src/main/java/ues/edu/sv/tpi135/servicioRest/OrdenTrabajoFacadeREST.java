@@ -26,7 +26,7 @@ import ues.edu.sv.mantenimientoLib.OrdenTrabajo;
  */
 @Stateless
 @Path("ordenTrabajo")
-public class OrdenTrabajoFacadeREST extends AbstractFacade<OrdenTrabajo> {
+public class OrdenTrabajoFacadeREST extends AbstractRest<OrdenTrabajo> {
 
     @PersistenceContext(unitName = "ues.edu.sv.tpi135_SistemaTPI135-ejb_ejb_1.0-SNAPSHOTPU")
     private EntityManager em;

@@ -26,7 +26,7 @@ import ues.edu.sv.mantenimientoLib.PasosProcedimiento;
  */
 @Stateless
 @Path("pasosProcedimiento")
-public class PasosProcedimientoFacadeREST extends AbstractFacade<PasosProcedimiento> {
+public class PasosProcedimientoFacadeREST extends AbstractRest<PasosProcedimiento> {
 
     @PersistenceContext(unitName = "ues.edu.sv.tpi135_SistemaTPI135-ejb_ejb_1.0-SNAPSHOTPU")
     private EntityManager em;
