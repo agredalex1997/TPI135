@@ -24,6 +24,7 @@ import ues.edu.sv.mantenimientoTPI.acceso.AbstractFacadeInterface;
 /**
  *
  * @author mateo
+ * @param <T>
  */
 public abstract class AbstractRest<T> implements Serializable {
 

@@ -1,6 +1,4 @@
-
 package ues.edu.sv.tpi135.servicioRest;
-
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -16,13 +14,13 @@ import ues.edu.sv.mantenimientoTPI.acceso.AreaFacadeLocal;
 @Stateless
 @Path("area")
 public class AreaFacadeREST extends AbstractRest<Area> {
-    
+
     @EJB
     protected AreaFacadeLocal areaEJB;
 
     @Override
     protected AbstractFacadeInterface<Area> entity() {
-        return (AbstractFacadeInterface<Area>) areaEJB;
+        return areaEJB;
     }
 
     @Override
@@ -30,6 +28,4 @@ public class AreaFacadeREST extends AbstractRest<Area> {
         return new Area();
     }
 
-   
-    
 }

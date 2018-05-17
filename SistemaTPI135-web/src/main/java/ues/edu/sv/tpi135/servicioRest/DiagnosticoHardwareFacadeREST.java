@@ -5,20 +5,12 @@
  */
 package ues.edu.sv.tpi135.servicioRest;
 
-import java.util.List;
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
 import ues.edu.sv.mantenimientoLib.DiagnosticoHardware;
+import ues.edu.sv.mantenimientoTPI.acceso.AbstractFacadeInterface;
+import ues.edu.sv.mantenimientoTPI.acceso.DiagnosticoHardwareFacadeLocal;
 
 /**
  *
@@ -28,64 +20,17 @@ import ues.edu.sv.mantenimientoLib.DiagnosticoHardware;
 @Path("diagnosticoHardware")
 public class DiagnosticoHardwareFacadeREST extends AbstractRest<DiagnosticoHardware> {
 
-    @PersistenceContext(unitName = "ues.edu.sv.tpi135_SistemaTPI135-ejb_ejb_1.0-SNAPSHOTPU")
-    private EntityManager em;
+    @EJB
+    protected DiagnosticoHardwareFacadeLocal diagnosticoEJB;
 
-    public DiagnosticoHardwareFacadeREST() {
-        super(DiagnosticoHardware.class);
-    }
-
-    @POST
     @Override
-    @Consumes(MediaType.APPLICATION_JSON)
-    public void create(DiagnosticoHardware entity) {
-        super.create(entity);
-    }
-
-    @PUT
-    @Path("{id}")
-    @Consumes(MediaType.APPLICATION_JSON)
-    public void edit(@PathParam("id") Integer id, DiagnosticoHardware entity) {
-        super.edit(entity);
-    }
-
-    @DELETE
-    @Path("{id}")
-    public void remove(@PathParam("id") Integer id) {
-        super.remove(super.find(id));
-    }
-
-    @GET
-    @Path("{id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public DiagnosticoHardware find(@PathParam("id") Integer id) {
-        return super.find(id);
-    }
-
-    @GET
-    @Override
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<DiagnosticoHardware> findAll() {
-        return super.findAll();
-    }
-
-    @GET
-    @Path("{from}/{to}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<DiagnosticoHardware> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
-        return super.findRange(new int[]{from, to});
-    }
-
-    @GET
-    @Path("count")
-    @Produces(MediaType.APPLICATION_JSON)
-    public int countREST() {
-        return super.count();
+    protected AbstractFacadeInterface<DiagnosticoHardware> entity() {
+        return (AbstractFacadeInterface<DiagnosticoHardware>) diagnosticoEJB;
     }
 
     @Override
-    protected EntityManager getEntityManager() {
-        return em;
+    protected DiagnosticoHardware nuevo() {
+        return new DiagnosticoHardware();
     }
     
 }

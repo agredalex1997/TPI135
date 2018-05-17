@@ -14,23 +14,6 @@ import ues.edu.sv.mantenimientoLib.Area;
  * @author esperanza
  */
 @Local
-public interface AreaFacadeLocal {
-    
-    void create(Area area);
-
-    void edit(Area area);
-
-    void remove(Area area);
-
-    Area find(Object id);
-
-    List<Area> findAll();
-
-    List<Area> findRange(int[] range);
-
-    int count();
-    
-    List<Area> findRange(int lower, int higher);
-    
-    List<Area> findByName(String nombre);
+public interface AreaFacadeLocal extends AbstractFacadeInterface<Area>{
+   
 }

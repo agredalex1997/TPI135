@@ -5,20 +5,12 @@
  */
 package ues.edu.sv.tpi135.servicioRest;
 
-import java.util.List;
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
 import ues.edu.sv.mantenimientoLib.DetalleEquipo;
+import ues.edu.sv.mantenimientoTPI.acceso.AbstractFacadeInterface;
+import ues.edu.sv.mantenimientoTPI.acceso.DetalleEquipoFacadeLocal;
 
 /**
  *
@@ -28,64 +20,17 @@ import ues.edu.sv.mantenimientoLib.DetalleEquipo;
 @Path("detalleEquipo")
 public class DetalleEquipoFacadeREST extends AbstractRest<DetalleEquipo> {
 
-    @PersistenceContext(unitName = "ues.edu.sv.tpi135_SistemaTPI135-ejb_ejb_1.0-SNAPSHOTPU")
-    private EntityManager em;
+    @EJB
+    protected DetalleEquipoFacadeLocal detalleequipoEJB;
 
-    public DetalleEquipoFacadeREST() {
-        super(DetalleEquipo.class);
-    }
-
-    @POST
     @Override
-    @Consumes(MediaType.APPLICATION_JSON)
-    public void create(DetalleEquipo entity) {
-        super.create(entity);
-    }
-
-    @PUT
-    @Path("{id}")
-    @Consumes(MediaType.APPLICATION_JSON)
-    public void edit(@PathParam("id") Integer id, DetalleEquipo entity) {
-        super.edit(entity);
-    }
-
-    @DELETE
-    @Path("{id}")
-    public void remove(@PathParam("id") Integer id) {
-        super.remove(super.find(id));
-    }
-
-    @GET
-    @Path("{id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public DetalleEquipo find(@PathParam("id") Integer id) {
-        return super.find(id);
-    }
-
-    @GET
-    @Override
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<DetalleEquipo> findAll() {
-        return super.findAll();
-    }
-
-    @GET
-    @Path("{from}/{to}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<DetalleEquipo> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
-        return super.findRange(new int[]{from, to});
-    }
-
-    @GET
-    @Path("count")
-    @Produces(MediaType.APPLICATION_JSON)
-    public int countREST() {
-        return super.count();
+    protected AbstractFacadeInterface<DetalleEquipo> entity() {
+        return (AbstractFacadeInterface<DetalleEquipo>) detalleequipoEJB;
     }
 
     @Override
-    protected EntityManager getEntityManager() {
-        return em;
+    protected DetalleEquipo nuevo() {
+        return new DetalleEquipo();
     }
-    
+
 }

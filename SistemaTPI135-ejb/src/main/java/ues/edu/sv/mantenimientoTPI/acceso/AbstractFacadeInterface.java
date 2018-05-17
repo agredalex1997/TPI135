@@ -10,7 +10,8 @@ import java.util.List;
 /**
  *
  * @author kevin
- * @Param <T>
+ * @param <T>
+ * 
  */
 public interface AbstractFacadeInterface<T>{
     T create(T entity);
