@@ -17,4 +17,8 @@ import ues.edu.sv.mantenimientoLib.PasosProcedimiento;
 public interface PasosProcedimientoFacadeLocal extends AbstractFacadeInterface<PasosProcedimiento>{
 
     
+    List<PasosProcedimiento> findRange(int lower, int higher);
+    
+    List<PasosProcedimiento> findByName(String nombre);
+    
 }

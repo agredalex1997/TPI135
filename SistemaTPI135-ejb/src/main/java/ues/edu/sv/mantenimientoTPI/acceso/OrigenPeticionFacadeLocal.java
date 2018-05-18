@@ -17,4 +17,8 @@ import ues.edu.sv.mantenimientoLib.OrigenPeticion;
 public interface OrigenPeticionFacadeLocal extends AbstractFacadeInterface<OrigenPeticion>{
 
     
+    List<OrigenPeticion> findRange(int lower, int higher);
+    
+    List<OrigenPeticion> findByName(String nombre);
+    
 }

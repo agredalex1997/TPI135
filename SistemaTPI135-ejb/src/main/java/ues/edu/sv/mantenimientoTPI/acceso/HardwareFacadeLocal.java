@@ -17,4 +17,8 @@ import ues.edu.sv.mantenimientoLib.Hardware;
 public interface HardwareFacadeLocal extends AbstractFacadeInterface<Hardware>{
 
     
+    List<Hardware> findRange(int lower, int higher);
+    
+    List<Hardware> findByName(String nombre);
+    
 }

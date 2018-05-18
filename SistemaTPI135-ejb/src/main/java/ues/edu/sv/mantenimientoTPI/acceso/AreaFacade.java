@@ -27,6 +27,5 @@ public class AreaFacade extends AbstractFacade<Area> implements AreaFacadeLocal 
 
     public AreaFacade() {
         super(Area.class);
-    }
-
+    }    
 }

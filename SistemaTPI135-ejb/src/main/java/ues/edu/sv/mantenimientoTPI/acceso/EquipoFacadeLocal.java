@@ -17,4 +17,8 @@ import ues.edu.sv.mantenimientoLib.Equipo;
 public interface EquipoFacadeLocal extends AbstractFacadeInterface<Equipo>{
 
     
+    List<Equipo> findRange(int lower, int higher);
+    
+    List<Equipo> findByName(String nombre);
+    
 }

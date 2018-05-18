@@ -16,4 +16,7 @@ import ues.edu.sv.mantenimientoLib.DiagnosticoHardware;
 @Local
 public interface DiagnosticoHardwareFacadeLocal extends AbstractFacadeInterface<DiagnosticoHardware>{
     
+    List<DiagnosticoHardware> findRange(int lower, int higher);
+    
+    List<DiagnosticoHardware> findByName(String nombre);
 }

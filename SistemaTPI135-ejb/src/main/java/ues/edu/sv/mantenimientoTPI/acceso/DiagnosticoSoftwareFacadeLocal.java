@@ -18,4 +18,8 @@ public interface DiagnosticoSoftwareFacadeLocal extends AbstractFacadeInterface<
 
     
     
+    List<DiagnosticoSoftware> findRange(int lower, int higher);
+    
+    List<DiagnosticoSoftware> findByName(String nombre);
+    
 }

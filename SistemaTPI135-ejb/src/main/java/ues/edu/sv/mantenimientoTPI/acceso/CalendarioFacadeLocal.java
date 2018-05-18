@@ -16,4 +16,8 @@ import ues.edu.sv.mantenimientoLib.Calendario;
 @Local
 public interface CalendarioFacadeLocal extends AbstractFacadeInterface<Calendario> {
     
+    List<Calendario> findRange(int lower, int higher);
+    
+    List<Calendario> findByName(String nombre);
+    
 }

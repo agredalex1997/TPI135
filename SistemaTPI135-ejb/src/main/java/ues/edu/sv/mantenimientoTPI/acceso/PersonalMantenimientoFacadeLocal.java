@@ -16,4 +16,8 @@ import ues.edu.sv.mantenimientoLib.PersonalMantenimiento;
 public interface PersonalMantenimientoFacadeLocal extends AbstractFacadeInterface<PersonalMantenimiento>{
 
     
+    List<PersonalMantenimiento> findRange(int lower, int higher);
+    
+    List<PersonalMantenimiento> findByName(String nombre);
+    
 }

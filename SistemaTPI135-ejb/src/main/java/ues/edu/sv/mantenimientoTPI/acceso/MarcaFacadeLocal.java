@@ -18,4 +18,8 @@ public interface MarcaFacadeLocal extends AbstractFacadeInterface<Marca>{
 
     
     
+    List<Marca> findRange(int lower, int higher);
+    
+    List<Marca> findByName(String nombre);
+    
 }

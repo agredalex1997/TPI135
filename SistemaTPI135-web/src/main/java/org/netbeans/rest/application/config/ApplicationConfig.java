@@ -29,26 +29,27 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(ues.edu.sv.tpi135.servicioRest.AreaResource.class);
-        resources.add(ues.edu.sv.tpi135.servicioRest.CalendarioResource.class);
-        resources.add(ues.edu.sv.tpi135.servicioRest.DetalleEquipoResource.class);
-        resources.add(ues.edu.sv.tpi135.servicioRest.DetallePeticionResource.class);
-        resources.add(ues.edu.sv.tpi135.servicioRest.DiagnisticoHardwareResource.class);
-        resources.add(ues.edu.sv.tpi135.servicioRest.DiagnosticoSoftwareResource.class);
-        resources.add(ues.edu.sv.tpi135.servicioRest.EquipoResource.class);
-        resources.add(ues.edu.sv.tpi135.servicioRest.EstadoResource.class);
-        resources.add(ues.edu.sv.tpi135.servicioRest.ExcepcionCalendarioResource.class);
-        resources.add(ues.edu.sv.tpi135.servicioRest.HardwareResource.class);
-        resources.add(ues.edu.sv.tpi135.servicioRest.MarcaResources.class);
-        resources.add(ues.edu.sv.tpi135.servicioRest.ModeloResource.class);
-        resources.add(ues.edu.sv.tpi135.servicioRest.OrdenTrabajoResource.class);
-        resources.add(ues.edu.sv.tpi135.servicioRest.OrigenPeticionResource.class);
-        resources.add(ues.edu.sv.tpi135.servicioRest.PasosProceimientoResource.class);
-        resources.add(ues.edu.sv.tpi135.servicioRest.PasosResource.class);
-        resources.add(ues.edu.sv.tpi135.servicioRest.PersonalMantenimientoResource.class);
-        resources.add(ues.edu.sv.tpi135.servicioRest.PeticionResource.class);
-        resources.add(ues.edu.sv.tpi135.servicioRest.ProcedimientoResource.class);
-        resources.add(ues.edu.sv.tpi135.servicioRest.TipoMantenimientoResource.class);
+        resources.add(org.netbeans.rest.application.config.CorsFliter.class);
+        resources.add(ues.edu.sv.tpi135.servicioRest.AreaFacadeREST.class);
+        resources.add(ues.edu.sv.tpi135.servicioRest.CalendarioFacadeREST.class);
+        resources.add(ues.edu.sv.tpi135.servicioRest.DetalleEquipoFacadeREST.class);
+        resources.add(ues.edu.sv.tpi135.servicioRest.DetallePeticionFacadeREST.class);
+        resources.add(ues.edu.sv.tpi135.servicioRest.DiagnosticoHardwareFacadeREST.class);
+        resources.add(ues.edu.sv.tpi135.servicioRest.DiagnosticoSoftwareFacadeREST.class);
+        resources.add(ues.edu.sv.tpi135.servicioRest.EquipoFacadeREST.class);
+        resources.add(ues.edu.sv.tpi135.servicioRest.EstadoFacadeREST.class);
+        resources.add(ues.edu.sv.tpi135.servicioRest.ExcepcionCalendarioFacadeREST.class);
+        resources.add(ues.edu.sv.tpi135.servicioRest.HardwareFacadeREST.class);
+        resources.add(ues.edu.sv.tpi135.servicioRest.MarcaFacadeREST.class);
+        resources.add(ues.edu.sv.tpi135.servicioRest.ModeloFacadeREST.class);
+        resources.add(ues.edu.sv.tpi135.servicioRest.OrdenTrabajoFacadeREST.class);
+        resources.add(ues.edu.sv.tpi135.servicioRest.OrigenPeticionFacadeREST.class);
+        resources.add(ues.edu.sv.tpi135.servicioRest.PasosFacadeREST.class);
+        resources.add(ues.edu.sv.tpi135.servicioRest.PasosProcedimientoFacadeREST.class);
+        resources.add(ues.edu.sv.tpi135.servicioRest.PersonalMantenimientoFacadeREST.class);
+        resources.add(ues.edu.sv.tpi135.servicioRest.PeticionFacadeREST.class);
+        resources.add(ues.edu.sv.tpi135.servicioRest.ProcedimientoFacadeREST.class);
+        resources.add(ues.edu.sv.tpi135.servicioRest.TipoMantenimientoFacadeREST.class);
     }
     
 }

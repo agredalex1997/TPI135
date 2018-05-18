@@ -17,4 +17,8 @@ import ues.edu.sv.mantenimientoLib.ExcepcionCalendario;
 public interface ExcepcionCalendarioFacadeLocal extends AbstractFacadeInterface<ExcepcionCalendario>{
 
     
+    List<ExcepcionCalendario> findRange(int lower, int higher);
+    
+    List<ExcepcionCalendario> findByName(String nombre);
+    
 }

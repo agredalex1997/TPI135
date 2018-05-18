@@ -18,4 +18,8 @@ public interface ModeloFacadeLocal extends AbstractFacadeInterface<Modelo>{
 
    
     
+    List<Modelo> findRange(int lower, int higher);
+    
+    List<Modelo> findByName(String nombre);
+    
 }

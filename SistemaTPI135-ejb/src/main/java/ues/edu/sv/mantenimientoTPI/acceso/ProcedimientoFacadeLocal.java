@@ -18,4 +18,8 @@ public interface ProcedimientoFacadeLocal extends AbstractFacadeInterface<Proced
 
    
     
+    List<Procedimiento> findRange(int lower, int higher);
+    
+    List<Procedimiento> findByName(String nombre);
+    
 }

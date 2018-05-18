@@ -17,4 +17,8 @@ import ues.edu.sv.mantenimientoLib.DetalleEquipo;
 public interface DetalleEquipoFacadeLocal extends AbstractFacadeInterface<DetalleEquipo>{
 
     
+    List<DetalleEquipo> findRange(int lower, int higher);
+    
+    List<DetalleEquipo> findByName(String nombre);
+    
 }

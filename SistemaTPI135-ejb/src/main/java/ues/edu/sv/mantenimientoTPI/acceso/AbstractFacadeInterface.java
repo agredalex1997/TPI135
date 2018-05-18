@@ -11,6 +11,7 @@ import java.util.List;
  *
  * @author kevin
  * @param <T>
+ * 
  */
 public interface AbstractFacadeInterface<T>{
       
@@ -33,5 +34,8 @@ public interface AbstractFacadeInterface<T>{
     List<T> findRange(int[] range);
 
     int count();
-
+    
+    List<T> findByName(String name);
+    
+    List<T> findRange(int min, int max);
 }

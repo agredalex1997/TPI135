@@ -17,4 +17,8 @@ import ues.edu.sv.mantenimientoLib.Estado;
 public interface EstadoFacadeLocal extends AbstractFacadeInterface<Estado>{
 
     
+    List<Estado> findRange(int lower, int higher);
+    
+    List<Estado> findByName(String nombre);
+    
 }

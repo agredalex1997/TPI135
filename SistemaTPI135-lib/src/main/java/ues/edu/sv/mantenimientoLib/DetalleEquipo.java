@@ -6,9 +6,12 @@
 package ues.edu.sv.mantenimientoLib;
 
 import java.io.Serializable;
+import javax.persistence.Basic;
 import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
@@ -25,8 +28,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "DetalleEquipo.findAll", query = "SELECT d FROM DetalleEquipo d")
-    , @NamedQuery(name = "DetalleEquipo.findByIdEquipo", query = "SELECT d FROM DetalleEquipo d WHERE d.detalleEquipoPK.idEquipo = :idEquipo")
-    , @NamedQuery(name = "DetalleEquipo.findByIdHardware", query = "SELECT d FROM DetalleEquipo d WHERE d.detalleEquipoPK.idHardware = :idHardware")
+    , @NamedQuery(name = "DetalleEquipo.findById", query = "SELECT d FROM DetalleEquipo d WHERE d.id = :id")
     , @NamedQuery(name = "DetalleEquipo.findByNoInventario", query = "SELECT d FROM DetalleEquipo d WHERE d.noInventario = :noInventario")
     , @NamedQuery(name = "DetalleEquipo.findByNoSerie", query = "SELECT d FROM DetalleEquipo d WHERE d.noSerie = :noSerie")
     , @NamedQuery(name = "DetalleEquipo.findByTamanio", query = "SELECT d FROM DetalleEquipo d WHERE d.tamanio = :tamanio")
@@ -34,8 +36,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class DetalleEquipo implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @EmbeddedId
-    protected DetalleEquipoPK detalleEquipoPK;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "ID")
+    private Integer id;
     @Column(name = "NO_INVENTARIO")
     private Integer noInventario;
     @Column(name = "NO_SERIE")
@@ -57,22 +62,29 @@ public class DetalleEquipo implements Serializable {
     public DetalleEquipo() {
     }
 
-    public DetalleEquipo(DetalleEquipoPK detalleEquipoPK) {
-        this.detalleEquipoPK = detalleEquipoPK;
+    public DetalleEquipo(Integer id) {
+        this.id = id;
     }
 
-    public DetalleEquipo(int idEquipo, int idHardware) {
-        this.detalleEquipoPK = new DetalleEquipoPK(idEquipo, idHardware);
+    public DetalleEquipo(Integer id, Integer noInventario, Integer noSerie, Integer tamanio, String observaciones, Equipo equipo, Hardware hardware, Modelo idModelo) {
+        this.id = id;
+        this.noInventario = noInventario;
+        this.noSerie = noSerie;
+        this.tamanio = tamanio;
+        this.observaciones = observaciones;
+        this.equipo = equipo;
+        this.hardware = hardware;
+        this.idModelo = idModelo;
     }
 
-    public DetalleEquipoPK getDetalleEquipoPK() {
-        return detalleEquipoPK;
+    public Integer getId() {
+        return id;
     }
 
-    public void setDetalleEquipoPK(DetalleEquipoPK detalleEquipoPK) {
-        this.detalleEquipoPK = detalleEquipoPK;
+    public void setId(Integer id) {
+        this.id = id;
     }
-
+    
     public Integer getNoInventario() {
         return noInventario;
     }
@@ -128,11 +140,11 @@ public class DetalleEquipo implements Serializable {
     public void setIdModelo(Modelo idModelo) {
         this.idModelo = idModelo;
     }
-
+    
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (detalleEquipoPK != null ? detalleEquipoPK.hashCode() : 0);
+        hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
@@ -143,7 +155,7 @@ public class DetalleEquipo implements Serializable {
             return false;
         }
         DetalleEquipo other = (DetalleEquipo) object;
-        if ((this.detalleEquipoPK == null && other.detalleEquipoPK != null) || (this.detalleEquipoPK != null && !this.detalleEquipoPK.equals(other.detalleEquipoPK))) {
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;
@@ -151,7 +163,7 @@ public class DetalleEquipo implements Serializable {
 
     @Override
     public String toString() {
-        return "ues.edu.sv.mantenimientoLib.DetalleEquipo[ detalleEquipoPK=" + detalleEquipoPK + " ]";
+        return "Clases.entities.DetalleEquipo[ id=" + id + " ]";
     }
     
 }

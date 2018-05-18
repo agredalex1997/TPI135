@@ -16,4 +16,8 @@ import ues.edu.sv.mantenimientoLib.DetallePeticion;
 @Local
 public interface DetallePeticionFacadeLocal extends AbstractFacadeInterface<DetallePeticion>{
     
+    List<DetallePeticion> findRange(int lower, int higher);
+    
+    List<DetallePeticion> findByName(String nombre);
+    
 }

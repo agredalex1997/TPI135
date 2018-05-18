@@ -7,11 +7,15 @@ package ues.edu.sv.mantenimientoTPI.acceso;
 
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 
 /**
  *
  * @author esperanza
- * @param <T>
+ * @Param <T>
  */
 public abstract class AbstractFacade<T> {
     private Class<T> entityClass;
@@ -97,5 +101,30 @@ public abstract class AbstractFacade<T> {
         cq.select(getEntityManager().getCriteriaBuilder().count(rt));
         javax.persistence.Query q = getEntityManager().createQuery(cq);
         return ((Long) q.getSingleResult()).intValue();
+    }
+    
+    public List<T> findRange(int lower, int higher) {
+      if (higher > lower) {
+        javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
+        cq.select(cq.from(entityClass));
+        javax.persistence.Query q = getEntityManager().createQuery(cq);
+        q.setMaxResults(higher - lower + 1);
+        q.setFirstResult(higher);
+        return q.getResultList();
+      }
+      return null;
+    }
+
+    public List<T> findByName(String name) {
+        if (name != null && getEntityManager() != null) {
+            CriteriaBuilder builder = getEntityManager().getCriteriaBuilder();
+            CriteriaQuery<T> query = builder.createQuery(entityClass);
+            Root<T> root = query.from(entityClass);
+            Predicate findByName = builder.like(builder.lower(root.<String>get("nombre")), "%" + name.toLowerCase() + "%");
+            query.select(root).where(findByName);
+            return getEntityManager().createQuery(query).getResultList();
+        } else {
+            return null;
+        }
     }
 }

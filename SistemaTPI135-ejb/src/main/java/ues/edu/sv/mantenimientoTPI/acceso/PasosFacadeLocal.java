@@ -18,4 +18,8 @@ public interface PasosFacadeLocal extends AbstractFacadeInterface<Pasos>{
 
     
     
+    List<Pasos> findRange(int lower, int higher);
+    
+    List<Pasos> findByName(String nombre);
+    
 }

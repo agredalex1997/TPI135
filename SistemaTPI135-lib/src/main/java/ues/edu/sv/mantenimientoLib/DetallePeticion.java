@@ -57,6 +57,13 @@ public class DetallePeticion implements Serializable {
         this.id = id;
     }
 
+    public DetallePeticion(Integer id, Peticion idPeticion, Equipo idEquipo, String observaciones) {
+        this.id = id;
+        this.observaciones = observaciones;
+        this.idEquipo = idEquipo;
+        this.idPeticion = idPeticion;
+    }
+
     public Integer getId() {
         return id;
     }
