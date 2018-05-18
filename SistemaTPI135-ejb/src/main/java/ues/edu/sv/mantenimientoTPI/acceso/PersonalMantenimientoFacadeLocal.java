@@ -5,7 +5,6 @@
  */
 package ues.edu.sv.mantenimientoTPI.acceso;
 
-import java.util.List;
 import javax.ejb.Local;
 import ues.edu.sv.mantenimientoLib.PersonalMantenimiento;
 
@@ -14,21 +13,8 @@ import ues.edu.sv.mantenimientoLib.PersonalMantenimiento;
  * @author esperanza
  */
 @Local
-public interface PersonalMantenimientoFacadeLocal {
+public interface PersonalMantenimientoFacadeLocal extends AbstractFacadeInterface<PersonalMantenimiento>{
 
-    void create(PersonalMantenimiento personalMantenimiento);
-
-    void edit(PersonalMantenimiento personalMantenimiento);
-
-    void remove(PersonalMantenimiento personalMantenimiento);
-
-    PersonalMantenimiento find(Object id);
-
-    List<PersonalMantenimiento> findAll();
-
-    List<PersonalMantenimiento> findRange(int[] range);
-
-    int count();
     
     List<PersonalMantenimiento> findRange(int lower, int higher);
     

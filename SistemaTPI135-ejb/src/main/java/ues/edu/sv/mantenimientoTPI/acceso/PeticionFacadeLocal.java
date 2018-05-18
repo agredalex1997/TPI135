@@ -5,7 +5,6 @@
  */
 package ues.edu.sv.mantenimientoTPI.acceso;
 
-import java.util.List;
 import javax.ejb.Local;
 import ues.edu.sv.mantenimientoLib.Peticion;
 
@@ -14,21 +13,9 @@ import ues.edu.sv.mantenimientoLib.Peticion;
  * @author esperanza
  */
 @Local
-public interface PeticionFacadeLocal {
+public interface PeticionFacadeLocal extends AbstractFacadeInterface<Peticion>{
 
-    void create(Peticion peticion);
-
-    void edit(Peticion peticion);
-
-    void remove(Peticion peticion);
-
-    Peticion find(Object id);
-
-    List<Peticion> findAll();
-
-    List<Peticion> findRange(int[] range);
-
-    int count();
+   
     
     List<Peticion> findRange(int lower, int higher);
     

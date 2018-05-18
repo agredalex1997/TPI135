@@ -14,21 +14,7 @@ import ues.edu.sv.mantenimientoLib.DetallePeticion;
  * @author esperanza
  */
 @Local
-public interface DetallePeticionFacadeLocal {
-
-    void create(DetallePeticion detallePeticion);
-
-    void edit(DetallePeticion detallePeticion);
-
-    void remove(DetallePeticion detallePeticion);
-
-    DetallePeticion find(Object id);
-
-    List<DetallePeticion> findAll();
-
-    List<DetallePeticion> findRange(int[] range);
-
-    int count();
+public interface DetallePeticionFacadeLocal extends AbstractFacadeInterface<DetallePeticion>{
     
     List<DetallePeticion> findRange(int lower, int higher);
     

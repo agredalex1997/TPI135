@@ -14,21 +14,9 @@ import ues.edu.sv.mantenimientoLib.Procedimiento;
  * @author esperanza
  */
 @Local
-public interface ProcedimientoFacadeLocal {
+public interface ProcedimientoFacadeLocal extends AbstractFacadeInterface<Procedimiento>{
 
-    void create(Procedimiento procedimiento);
-
-    void edit(Procedimiento procedimiento);
-
-    void remove(Procedimiento procedimiento);
-
-    Procedimiento find(Object id);
-
-    List<Procedimiento> findAll();
-
-    List<Procedimiento> findRange(int[] range);
-
-    int count();
+   
     
     List<Procedimiento> findRange(int lower, int higher);
     

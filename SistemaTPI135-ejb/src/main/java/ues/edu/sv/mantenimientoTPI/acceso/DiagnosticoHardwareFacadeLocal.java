@@ -14,21 +14,7 @@ import ues.edu.sv.mantenimientoLib.DiagnosticoHardware;
  * @author esperanza
  */
 @Local
-public interface DiagnosticoHardwareFacadeLocal {
-
-    void create(DiagnosticoHardware diagnosticoHardware);
-
-    void edit(DiagnosticoHardware diagnosticoHardware);
-
-    void remove(DiagnosticoHardware diagnosticoHardware);
-
-    DiagnosticoHardware find(Object id);
-
-    List<DiagnosticoHardware> findAll();
-
-    List<DiagnosticoHardware> findRange(int[] range);
-
-    int count();
+public interface DiagnosticoHardwareFacadeLocal extends AbstractFacadeInterface<DiagnosticoHardware>{
     
     List<DiagnosticoHardware> findRange(int lower, int higher);
     

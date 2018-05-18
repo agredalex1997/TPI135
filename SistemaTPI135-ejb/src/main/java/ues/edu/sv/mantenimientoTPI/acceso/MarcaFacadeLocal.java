@@ -14,21 +14,9 @@ import ues.edu.sv.mantenimientoLib.Marca;
  * @author esperanza
  */
 @Local
-public interface MarcaFacadeLocal {
+public interface MarcaFacadeLocal extends AbstractFacadeInterface<Marca>{
 
-    void create(Marca marca);
-
-    void edit(Marca marca);
-
-    void remove(Marca marca);
-
-    Marca find(Object id);
-
-    List<Marca> findAll();
-
-    List<Marca> findRange(int[] range);
-
-    int count();
+    
     
     List<Marca> findRange(int lower, int higher);
     

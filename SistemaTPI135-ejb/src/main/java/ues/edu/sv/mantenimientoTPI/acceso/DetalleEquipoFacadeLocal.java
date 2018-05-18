@@ -14,21 +14,8 @@ import ues.edu.sv.mantenimientoLib.DetalleEquipo;
  * @author esperanza
  */
 @Local
-public interface DetalleEquipoFacadeLocal {
+public interface DetalleEquipoFacadeLocal extends AbstractFacadeInterface<DetalleEquipo>{
 
-    void create(DetalleEquipo detalleEquipo);
-
-    void edit(DetalleEquipo detalleEquipo);
-
-    void remove(DetalleEquipo detalleEquipo);
-
-    DetalleEquipo find(Object id);
-
-    List<DetalleEquipo> findAll();
-
-    List<DetalleEquipo> findRange(int[] range);
-
-    int count();
     
     List<DetalleEquipo> findRange(int lower, int higher);
     

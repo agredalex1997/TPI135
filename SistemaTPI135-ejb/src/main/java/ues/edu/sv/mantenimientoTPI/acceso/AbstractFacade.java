@@ -18,7 +18,6 @@ import javax.persistence.criteria.Root;
  * @Param <T>
  */
 public abstract class AbstractFacade<T> {
-
     private Class<T> entityClass;
 
     public AbstractFacade(Class<T> entityClass) {
@@ -27,17 +26,55 @@ public abstract class AbstractFacade<T> {
 
     protected abstract EntityManager getEntityManager();
 
-    public void create(T entity) {
-        getEntityManager().persist(entity);
+    public T create(T entity) {
+        if (entity != null && getEntityManager()!=null) {
+            getEntityManager().persist(entity);
+            return entity;
+        }else{
+            return null;
+        }
     }
 
-    public void edit(T entity) {
-        getEntityManager().merge(entity);
+    public T edit(T entity) {
+        if (entity != null && getEntityManager()!=null) {
+            getEntityManager().merge(entity);
+            return entity;
+        }else{
+            return null;
+        }
     }
 
-    public void remove(T entity) {
-        getEntityManager().remove(getEntityManager().merge(entity));
+    public T remove(T entity) {
+        if (entity!=null && getEntityManager()!=null) {
+            getEntityManager().remove(getEntityManager().merge(entity));
+            return entity;
+        }else{
+            return null;
+        }
     }
+    
+    public boolean crear(T entity){
+        
+        if (entity!= null && getEntityManager()!=null) {
+            return create(entity)==entity;
+        }
+        return false;
+    }
+    
+    public boolean modificar(T entity){
+        if (entity!= null && getEntityManager()!=null) {
+            return edit(entity)==entity;
+        }
+        return false;
+    }
+    
+    public boolean eliminar(T entity){
+        if (entity!= null && getEntityManager()!=null) {
+            return remove(entity)==entity;
+        }
+        return false;
+    }
+    
 
     public T find(Object id) {
         return getEntityManager().find(entityClass, id);
@@ -90,5 +127,4 @@ public abstract class AbstractFacade<T> {
             return null;
         }
     }
-    
 }

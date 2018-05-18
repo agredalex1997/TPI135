@@ -14,7 +14,7 @@ import ues.edu.sv.mantenimientoLib.OrdenTrabajo;
  * @author esperanza
  */
 @Local
-public interface OrdenTrabajoFacadeLocal {
+public interface OrdenTrabajoFacadeLocal extends AbstractFacadeInterface<OrdenTrabajo>{
 
     void create(OrdenTrabajo ordenTrabajo);
 
@@ -33,5 +33,4 @@ public interface OrdenTrabajoFacadeLocal {
     List<OrdenTrabajo> findRange(int lower, int higher);
     
     List<OrdenTrabajo> findByName(String nombre);
-    
 }

@@ -5,7 +5,6 @@
  */
 package ues.edu.sv.mantenimientoTPI.acceso;
 
-import java.util.List;
 import javax.ejb.Local;
 import ues.edu.sv.mantenimientoLib.TipoMantenimiento;
 
@@ -14,21 +13,8 @@ import ues.edu.sv.mantenimientoLib.TipoMantenimiento;
  * @author esperanza
  */
 @Local
-public interface TipoMantenimientoFacadeLocal {
+public interface TipoMantenimientoFacadeLocal extends AbstractFacadeInterface<TipoMantenimiento>{
 
-    void create(TipoMantenimiento tipoMantenimiento);
-
-    void edit(TipoMantenimiento tipoMantenimiento);
-
-    void remove(TipoMantenimiento tipoMantenimiento);
-
-    TipoMantenimiento find(Object id);
-
-    List<TipoMantenimiento> findAll();
-
-    List<TipoMantenimiento> findRange(int[] range);
-
-    int count();
     
     List<TipoMantenimiento> findRange(int lower, int higher);
     

@@ -5,7 +5,6 @@
  */
 package ues.edu.sv.mantenimientoTPI.acceso;
 
-import java.util.List;
 import javax.ejb.Local;
 import ues.edu.sv.mantenimientoLib.Area;
 
@@ -15,5 +14,6 @@ import ues.edu.sv.mantenimientoLib.Area;
  */
 @Local
 public interface AreaFacadeLocal extends AbstractFacadeInterface<Area>{
-   
+    public Area create(Area entity);
+
 }
