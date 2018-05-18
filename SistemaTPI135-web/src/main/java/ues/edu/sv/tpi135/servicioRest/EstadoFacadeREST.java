@@ -26,7 +26,7 @@ public class EstadoFacadeREST extends AbstractRest<Estado> {
 
     @Override
     protected AbstractFacadeInterface<Estado> entity() {
-        return (AbstractFacadeInterface<Estado>) estadoEJB;
+        return estadoEJB;
     }
 
     @Override

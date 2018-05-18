@@ -24,7 +24,7 @@ public class CalendarioFacadeREST extends AbstractRest<Calendario> {
     
    @Override
     protected AbstractFacadeInterface<Calendario> entity() {
-        return (AbstractFacadeInterface<Calendario>) calendarioEJB;
+        return calendarioEJB;
     }
 
     @Override

@@ -36,7 +36,7 @@ public class PeticionFacadeREST extends AbstractRest<Peticion> {
 
     @Override
     protected AbstractFacadeInterface<Peticion> entity() {
-        return (AbstractFacadeInterface<Peticion>) peticionEJB;
+        return peticionEJB;
     }
 
     @Override

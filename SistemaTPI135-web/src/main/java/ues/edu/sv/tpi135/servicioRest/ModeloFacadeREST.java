@@ -24,7 +24,7 @@ public class ModeloFacadeREST extends AbstractRest<Modelo> {
 
     @Override
     protected AbstractFacadeInterface<Modelo> entity() {
-        return (AbstractFacadeInterface<Modelo>) modeloEJB;
+        return modeloEJB;
     }
 
     @Override

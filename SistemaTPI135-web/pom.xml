@@ -80,6 +80,7 @@
 
     <build>
         <plugins>
+            <!--lugin para sonarqube-->
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
@@ -208,6 +209,7 @@
         </plugins>
     </build>
     
+<!--    este perfil es para que sonarqube que esta corriendo en un contenedor de docker -->
     <profiles>
         <profile>
             <id>sonar</id>

@@ -24,7 +24,7 @@ public class PersonalMantenimientoFacadeREST extends AbstractRest<PersonalManten
 
     @Override
     protected AbstractFacadeInterface<PersonalMantenimiento> entity() {
-        return (AbstractFacadeInterface<PersonalMantenimiento>) pmEJB;
+        return pmEJB;
     }
 
     @Override

@@ -7,7 +7,6 @@ package ues.edu.sv.tpi135.servicioRest;
 
 import java.io.Serializable;
 import java.util.List;
-import javax.persistence.EntityManager;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -18,7 +17,6 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import ues.edu.sv.mantenimientoLib.Area;
 import ues.edu.sv.mantenimientoTPI.acceso.AbstractFacadeInterface;
 
 /**
@@ -33,6 +31,7 @@ public abstract class AbstractRest<T> implements Serializable {
     protected abstract T nuevo();
 
     @POST
+    @Path("crear")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response create(T entity) {
         if(entity().crear(entity)){
@@ -71,6 +70,7 @@ public abstract class AbstractRest<T> implements Serializable {
     }
 
     @GET
+    @Path("findAll")
     @Produces(MediaType.APPLICATION_JSON)
     public List<T> findAll() {
          if( entity() != null ){

@@ -25,7 +25,7 @@ public class DetalleEquipoFacadeREST extends AbstractRest<DetalleEquipo> {
 
     @Override
     protected AbstractFacadeInterface<DetalleEquipo> entity() {
-        return (AbstractFacadeInterface<DetalleEquipo>) detalleequipoEJB;
+        return detalleequipoEJB;
     }
 
     @Override

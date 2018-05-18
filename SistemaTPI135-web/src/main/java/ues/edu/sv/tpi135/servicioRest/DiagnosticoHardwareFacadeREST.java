@@ -25,7 +25,7 @@ public class DiagnosticoHardwareFacadeREST extends AbstractRest<DiagnosticoHardw
 
     @Override
     protected AbstractFacadeInterface<DiagnosticoHardware> entity() {
-        return (AbstractFacadeInterface<DiagnosticoHardware>) diagnosticoEJB;
+        return diagnosticoEJB;
     }
 
     @Override

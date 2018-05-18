@@ -15,9 +15,6 @@ import ues.edu.sv.mantenimientoLib.TipoMantenimiento;
 @Local
 public interface TipoMantenimientoFacadeLocal extends AbstractFacadeInterface<TipoMantenimiento>{
 
-    
-    List<TipoMantenimiento> findRange(int lower, int higher);
-    
-    List<TipoMantenimiento> findByName(String nombre);
+ 
     
 }

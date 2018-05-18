@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package ues.edu.sv.mantenimientoTPI.acceso;
-
-import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

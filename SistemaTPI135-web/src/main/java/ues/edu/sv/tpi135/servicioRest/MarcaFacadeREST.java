@@ -24,7 +24,7 @@ public class MarcaFacadeREST extends AbstractRest<Marca> {
 
     @Override
     protected AbstractFacadeInterface<Marca> entity() {
-        return (AbstractFacadeInterface<Marca>) marcaEJB;
+        return  marcaEJB;
     }
 
     @Override

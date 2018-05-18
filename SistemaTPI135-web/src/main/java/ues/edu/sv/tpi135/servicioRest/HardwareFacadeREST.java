@@ -25,7 +25,7 @@ public class HardwareFacadeREST extends AbstractRest<Hardware> {
 
     @Override
     protected AbstractFacadeInterface<Hardware> entity() {
-        return (AbstractFacadeInterface<Hardware>) hardwareEJB;
+        return  hardwareEJB;
     }
 
     @Override

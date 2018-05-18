@@ -24,7 +24,7 @@ public class PasosFacadeREST extends AbstractRest<Pasos> {
 
     @Override
     protected AbstractFacadeInterface<Pasos> entity() {
-        return (AbstractFacadeInterface<Pasos>) pasosEJB;
+        return pasosEJB;
     }
 
     @Override

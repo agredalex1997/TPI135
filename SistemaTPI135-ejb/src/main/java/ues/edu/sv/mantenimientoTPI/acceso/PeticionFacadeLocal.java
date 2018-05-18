@@ -17,8 +17,5 @@ public interface PeticionFacadeLocal extends AbstractFacadeInterface<Peticion>{
 
    
     
-    List<Peticion> findRange(int lower, int higher);
-    
-    List<Peticion> findByName(String nombre);
     
 }

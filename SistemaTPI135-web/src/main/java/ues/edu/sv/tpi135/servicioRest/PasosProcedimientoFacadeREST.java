@@ -24,7 +24,7 @@ public class PasosProcedimientoFacadeREST extends AbstractRest<PasosProcedimient
 
     @Override
     protected AbstractFacadeInterface<PasosProcedimiento> entity() {
-        return (AbstractFacadeInterface<PasosProcedimiento>) ppEJB;
+        return ppEJB;
     }
 
     @Override

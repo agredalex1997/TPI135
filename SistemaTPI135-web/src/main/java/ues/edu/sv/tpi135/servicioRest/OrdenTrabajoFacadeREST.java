@@ -24,7 +24,7 @@ public class OrdenTrabajoFacadeREST extends AbstractRest<OrdenTrabajo> {
 
     @Override
     protected AbstractFacadeInterface<OrdenTrabajo> entity() {
-        return (AbstractFacadeInterface<OrdenTrabajo>) ordenEJB;
+        return ordenEJB;
     }
 
     @Override

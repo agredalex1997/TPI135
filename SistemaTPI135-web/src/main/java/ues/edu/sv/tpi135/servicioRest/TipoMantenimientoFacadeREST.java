@@ -36,7 +36,7 @@ public class TipoMantenimientoFacadeREST extends AbstractRest<TipoMantenimiento>
 
     @Override
     protected AbstractFacadeInterface<TipoMantenimiento> entity() {
-        return (AbstractFacadeInterface<TipoMantenimiento>) tipoEJB;
+        return tipoEJB;
     }
 
     @Override
