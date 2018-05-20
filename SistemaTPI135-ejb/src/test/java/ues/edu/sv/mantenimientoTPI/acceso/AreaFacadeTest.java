@@ -10,13 +10,14 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.powermock.reflect.Whitebox;
-import ues.edu.sv.mantenimientoLib.Area;
+import ues.edu.sv.mantenimientolib.Area;
 
 /**
  *
  * @author esperanza
  */
 public class AreaFacadeTest {
+
    public EntityManagerProvider emp = EntityManagerProvider.persistenceUnit("testPU");
    public AreaFacadeTest() {}
 
