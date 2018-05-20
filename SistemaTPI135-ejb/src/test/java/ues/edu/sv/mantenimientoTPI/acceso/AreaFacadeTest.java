@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -22,6 +23,7 @@ public class AreaFacadeTest {
     /**
      * Test of findAll method, of class AreaFacade.
      */
+   
     @Test
     public void testFindAll() throws Exception {
         System.out.println("findAll");
@@ -43,14 +45,13 @@ public class AreaFacadeTest {
     /**
      * Test of findRange method, of class AreaFacade.
      */
-    @Ignore
     @Test
     public void testFindRange() throws Exception {
         EntityManager em = emp.em();
         System.out.println("findRange");
         
-        Area area = new Area(1, "Postgrado");
-        Area area2 = new Area(2, "Ingenieria");
+        Area area = new Area(4, "Postgrado");
+        Area area2 = new Area(5, "Ingenieria");
         
         List<Area> list = new ArrayList<>();
         list.add(area);
@@ -60,8 +61,8 @@ public class AreaFacadeTest {
         Whitebox.setInternalState(Af, "em", em);
         
         Af.getEntityManager().getTransaction().begin();
-        Af.getEntityManager().persist(area);
         Af.getEntityManager().persist(area2);
+        Af.getEntityManager().persist(area);
         int[] rango = {0, 1};
         assertEquals(list.get(0), Af.findRange(rango).get(0));
     }
@@ -69,12 +70,12 @@ public class AreaFacadeTest {
     /**
      * Test of count method, of class AreaFacade.
      */
-    @Ignore
+    
     @Test
     public void testCount() throws Exception {
         EntityManager em = emp.em();
-        Area area1 = new Area(1, "Postgrado");
-        Area area2 = new Area(2, "Ingenieria");
+        Area area1 = new Area(6, "Postgrado");
+        Area area2 = new Area(7, "Ingenieria");
         List<Area> list = new ArrayList<>();
         list.add(area1);
         list.add(area2);
@@ -114,22 +115,23 @@ public class AreaFacadeTest {
     /**
      * Test of edit method, of class AreaFacade.
      */
-    
     @Test
     public void testEdit() throws Exception {
-        Area area = new Area(1, "postgrados");
+        EntityManager em = emp.em();
+        Area area1 = new Area(9, "Postgrado");
         AreaFacade Af = new AreaFacade();
-
-        Whitebox.setInternalState(Af, "em", emp.em());
+        Whitebox.setInternalState(Af, "em", em);
         Af.getEntityManager().getTransaction().begin();
-        Af.getEntityManager().persist(area);
-        assertEquals(area, Af.find(1));
+        Af.getEntityManager().persist(area1);
+        Area esperada = new Area(1, "ingenieria");
+        Area a = Af.edit(esperada);
+        assertNotNull(a.getId()); //revisando si la base de datos no esta vacia 
+        assertEquals(esperada.getNombre(), a.getNombre());//revisando si edita en la base de datos 
     }
 
     /**
      * Test of remove method, of class AreaFacade.
      */
-    
     @Test
     public void testRemove() throws Exception {
         System.out.println("remove");
