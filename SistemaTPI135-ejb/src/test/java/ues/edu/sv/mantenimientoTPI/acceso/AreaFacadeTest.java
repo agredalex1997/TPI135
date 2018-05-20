@@ -11,6 +11,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.powermock.reflect.Whitebox;
 import ues.edu.sv.mantenimientolib.Area;
+import ues.edu.sv.mantenimientotpi.acceso.AreaFacade;
 
 /**
  *

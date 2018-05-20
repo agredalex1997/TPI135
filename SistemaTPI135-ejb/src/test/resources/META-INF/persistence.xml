@@ -3,26 +3,26 @@
   <persistence-unit name="testPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <jta-data-source>jdbc/_mantenimientoTest</jta-data-source>
-    <class>ues.edu.sv.mantenimientoLib.Area</class>
-    <class>ues.edu.sv.mantenimientoLib.Calendario</class>
-    <class>ues.edu.sv.mantenimientoLib.DetalleEquipo</class>
-    <class>ues.edu.sv.mantenimientoLib.DetallePeticion</class>
-    <class>ues.edu.sv.mantenimientoLib.DiagnosticoHardware</class>
-    <class>ues.edu.sv.mantenimientoLib.DiagnosticoSoftware</class>
-    <class>ues.edu.sv.mantenimientoLib.Equipo</class>
-    <class>ues.edu.sv.mantenimientoLib.Estado</class>
-    <class>ues.edu.sv.mantenimientoLib.ExcepcionCalendario</class>
-    <class>ues.edu.sv.mantenimientoLib.Hardware</class>
-    <class>ues.edu.sv.mantenimientoLib.Marca</class>
-    <class>ues.edu.sv.mantenimientoLib.Modelo</class>
-    <class>ues.edu.sv.mantenimientoLib.OrdenTrabajo</class>
-    <class>ues.edu.sv.mantenimientoLib.OrigenPeticion</class>
-    <class>ues.edu.sv.mantenimientoLib.Pasos</class>
-    <class>ues.edu.sv.mantenimientoLib.PasosProcedimiento</class>
-    <class>ues.edu.sv.mantenimientoLib.PersonalMantenimiento</class>
-    <class>ues.edu.sv.mantenimientoLib.Peticion</class>
-    <class>ues.edu.sv.mantenimientoLib.Procedimiento</class>
-    <class>ues.edu.sv.mantenimientoLib.TipoMantenimiento</class>
+    <class>ues.edu.sv.mantenimientolib.Area</class>
+    <class>ues.edu.sv.mantenimientolib.Calendario</class>
+    <class>ues.edu.sv.mantenimientolib.DetalleEquipo</class>
+    <class>ues.edu.sv.mantenimientolib.DetallePeticion</class>
+    <class>ues.edu.sv.mantenimientolib.DiagnosticoHardware</class>
+    <class>ues.edu.sv.mantenimientolib.DiagnosticoSoftware</class>
+    <class>ues.edu.sv.mantenimientolib.Equipo</class>
+    <class>ues.edu.sv.mantenimientolib.Estado</class>
+    <class>ues.edu.sv.mantenimientolib.ExcepcionCalendario</class>
+    <class>ues.edu.sv.mantenimientolib.Hardware</class>
+    <class>ues.edu.sv.mantenimientolib.Marca</class>
+    <class>ues.edu.sv.mantenimientolib.Modelo</class>
+    <class>ues.edu.sv.mantenimientolib.OrdenTrabajo</class>
+    <class>ues.edu.sv.mantenimientolib.OrigenPeticion</class>
+    <class>ues.edu.sv.mantenimientolib.Pasos</class>
+    <class>ues.edu.sv.mantenimientolib.PasosProcedimiento</class>
+    <class>ues.edu.sv.mantenimientolib.PersonalMantenimiento</class>
+    <class>ues.edu.sv.mantenimientolib.Peticion</class>
+    <class>ues.edu.sv.mantenimientolib.Procedimiento</class>
+    <class>ues.edu.sv.mantenimientolib.TipoMantenimiento</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>

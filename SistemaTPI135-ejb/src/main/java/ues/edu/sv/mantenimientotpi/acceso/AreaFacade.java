@@ -19,7 +19,7 @@ public class AreaFacade extends AbstractFacade<Area> implements AreaFacadeLocal 
     private EntityManager em;
 
     @Override
-    protected EntityManager getEntityManager() {
+    public EntityManager getEntityManager() {
         return em;
     }
 
