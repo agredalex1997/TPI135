@@ -11,7 +11,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Rule;
 import org.junit.Test;
 import org.powermock.reflect.Whitebox;
-import ues.edu.sv.mantenimientoLib.Area;
+import ues.edu.sv.mantenimientolib.Area;
 
 /**
  *

@@ -1,4 +1,4 @@
-FROM sonarqube:7.1
+FROM sonarqube:alpine
 MAINTAINER ikki RM13016@ues.edu.sv
-ENV Login:admin
-env Password:admin
+ENV SONARQUBE_JDBC_USERNAME=sonar 
+ENV SONARQUBE_JDBC_PASSWORD=sonar
