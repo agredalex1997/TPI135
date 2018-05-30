@@ -69,29 +69,5 @@ public class ExcepcionCalendario implements Serializable {
         this.descripcion = descripcion;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (fecha != null ? fecha.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof ExcepcionCalendario)) {
-            return false;
-        }
-        ExcepcionCalendario other = (ExcepcionCalendario) object;
-        if ((this.fecha == null && other.fecha != null) || (this.fecha != null && !this.fecha.equals(other.fecha))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "ues.edu.sv.mantenimientoLib.ExcepcionCalendario[ fecha=" + fecha + " ]";
-    }
     
 }

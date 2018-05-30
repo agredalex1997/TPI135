@@ -162,7 +162,7 @@
                 <artifactId>docker-compose-maven-plugin</artifactId>
                 <version>1.0.3</version>
                 <executions>
-<!--                    <execution>
+                    <execution>
                         <id>down</id>
                         <phase>verify</phase>
                         <goals>
@@ -173,7 +173,7 @@
                             <removeVolumes>true</removeVolumes>
                            
                         </configuration>
-                    </execution>-->
+                    </execution>
                     <execution>
                         <id>up</id>
                         <phase>verify</phase>

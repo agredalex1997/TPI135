@@ -112,29 +112,6 @@ public class DiagnosticoHardware implements Serializable {
         this.ordenTrabajo = ordenTrabajo;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (idOrdenTrabajo != null ? idOrdenTrabajo.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof DiagnosticoHardware)) {
-            return false;
-        }
-        DiagnosticoHardware other = (DiagnosticoHardware) object;
-        if ((this.idOrdenTrabajo == null && other.idOrdenTrabajo != null) || (this.idOrdenTrabajo != null && !this.idOrdenTrabajo.equals(other.idOrdenTrabajo))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "ues.edu.sv.mantenimientoLib.DiagnosticoHardware[ idOrdenTrabajo=" + idOrdenTrabajo + " ]";
-    }
+  
     
 }

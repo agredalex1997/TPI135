@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package ues.edu.sv.mantenimientolib;
-
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
@@ -122,29 +121,5 @@ public class Modelo implements Serializable {
         this.idMarca = idMarca;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Modelo)) {
-            return false;
-        }
-        Modelo other = (Modelo) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "ues.edu.sv.mantenimientoLib.Modelo[ id=" + id + " ]";
-    }
-    
+ 
 }

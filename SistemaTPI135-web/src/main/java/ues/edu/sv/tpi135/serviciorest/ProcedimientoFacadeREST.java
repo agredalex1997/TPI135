@@ -24,7 +24,7 @@ public class ProcedimientoFacadeREST extends AbstractRest<Procedimiento> {
 
     @Override
     protected AbstractFacadeInterface<Procedimiento> entity() {
-        return (AbstractFacadeInterface<Procedimiento>) procEJB;
+        return procEJB;
     }
 
     @Override

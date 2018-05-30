@@ -6,6 +6,7 @@
 package ues.edu.sv.tpi135.serviciorest;
 
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -76,7 +77,7 @@ public abstract class AbstractRest<T> implements Serializable {
          if( entity() != null ){
         return entity().findAll();
         }
-        return null;
+        return Collections.emptyList();
     }
 
     @GET
@@ -86,7 +87,7 @@ public abstract class AbstractRest<T> implements Serializable {
          if( entity() != null ){
         return entity().findRange(from, to);
         }
-        return null;
+        return Collections.emptyList();
     }
 
     @GET

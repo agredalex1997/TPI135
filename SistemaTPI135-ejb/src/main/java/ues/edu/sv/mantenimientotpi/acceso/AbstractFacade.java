@@ -5,6 +5,7 @@
  */
 package ues.edu.sv.mantenimientotpi.acceso;
 
+import java.util.Collections;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -112,7 +113,7 @@ public abstract class AbstractFacade<T> {
         q.setFirstResult(higher);
         return q.getResultList();
       }
-      return null;
+      return Collections.emptyList();
     }
 
     public List<T> findByName(String name) {
@@ -124,7 +125,7 @@ public abstract class AbstractFacade<T> {
             query.select(root).where(findByName);
             return getEntityManager().createQuery(query).getResultList();
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 }
