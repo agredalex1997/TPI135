@@ -20,5 +20,6 @@ public interface ExcepcionCalendarioFacadeLocal extends AbstractFacadeInterface<
     List<ExcepcionCalendario> findRange(int lower, int higher);
     
     List<ExcepcionCalendario> findByName(String nombre);
-    
+
 }
+
