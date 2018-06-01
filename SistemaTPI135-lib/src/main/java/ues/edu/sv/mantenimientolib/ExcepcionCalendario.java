@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author esperanza
+ * @author kevin
  */
 @Entity
 @Table(name = "EXCEPCION_CALENDARIO", catalog = "mantenimientoTpi", schema = "")
@@ -69,5 +69,4 @@ public class ExcepcionCalendario implements Serializable {
         this.descripcion = descripcion;
     }
 
-    
 }
