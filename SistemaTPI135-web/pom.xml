@@ -82,6 +82,13 @@
             <version>1.10.19</version>
             <scope>test</scope>
         </dependency>
+        <!--dependencia para el agente de jacoco-->
+<dependency>
+    <groupId>org.jacoco</groupId>
+    <artifactId>org.jacoco.agent</artifactId>
+    <version>0.8.1</version>
+    <scope>test</scope>
+</dependency>
     </dependencies>
 
     <build>
@@ -91,6 +98,27 @@
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
                 <version>3.4.0.905</version>
+            </plugin>
+             <!--plugin para jacoco-->
+              <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.1</version>
+                <executions>
+                    <execution>
+                        <id>jacoco-initialize</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>jacoco-site</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -116,7 +144,7 @@
                 </configuration>
             </plugin>
             <!--plugin para levantar los contenedores de docker--> 
-            <plugin>
+           <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.6.0</version>
@@ -231,7 +259,7 @@
         </plugins>
     </build>
     
-<!--    este perfil es para que sonarqube que esta corriendo en un contenedor de docker -->
+    <!--    este perfil es para que sonarqube que esta corriendo en un contenedor de docker -->
     <profiles>
         <profile>
             <id>sonar</id>
@@ -241,10 +269,28 @@
             <properties>
                 <!-- Optional URL to server. Default value is http://localhost:9000 -->
                 <sonar.host.url>
-                  http://localhost:9000
+                    http://localhost:9000
                 </sonar.host.url>
             </properties>
         </profile>
-     </profiles>
+    </profiles>
+    <!--para manejar los reportes de jacoco-->
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.1</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <!-- select non-aggregate reports -->
+                            <report>report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+        </plugins>
+    </reporting>
 
 </project>
