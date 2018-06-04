@@ -17,7 +17,7 @@
            }
            
        }
-      stages('verificar covertura'){
+      stage('verificar covertura'){
          steps{
          sh"$MAVEN sonar:sonar"
          }
