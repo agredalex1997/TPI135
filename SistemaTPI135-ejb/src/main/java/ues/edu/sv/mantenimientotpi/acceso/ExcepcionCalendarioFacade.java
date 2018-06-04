@@ -30,3 +30,4 @@ public class ExcepcionCalendarioFacade extends AbstractFacade<ExcepcionCalendari
     }
     
 }
+

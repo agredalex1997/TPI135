@@ -31,6 +31,4 @@ public class ExcepcionCalendarioFacadeREST extends AbstractRest<ExcepcionCalenda
     protected ExcepcionCalendario nuevo() {
         return new ExcepcionCalendario();
     }
-
-    
 }
