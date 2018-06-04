@@ -17,5 +17,10 @@
            }
            
        }
+      stages('verificar covertura'){
+         steps{
+         sh"$MAVEN sonar:sonar"
+         }
+      }
    }
 }
