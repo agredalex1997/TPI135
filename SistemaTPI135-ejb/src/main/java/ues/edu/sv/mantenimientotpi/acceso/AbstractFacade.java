@@ -110,7 +110,7 @@ public abstract class AbstractFacade<T> {
         cq.select(cq.from(entityClass));
         javax.persistence.Query q = getEntityManager().createQuery(cq);
         q.setMaxResults(higher - lower + 1);
-        q.setFirstResult(higher);
+        q.setFirstResult(lower);
         return q.getResultList();
       }
       return Collections.emptyList();
