@@ -1,4 +1,4 @@
-   pipeline{
+  pipeline{
    agent any
    stages{
        stage('obtener repositorio'){
@@ -6,21 +6,23 @@
                git'https://github.com/airmind97/TPI135'
            }
        }
-       stage('Realizar Pruebas'){
+       stage('Pruebas de unidad'){
            steps{
                sh"$MAVEN test"
            }
        }
+       stage('verificar covertura'){
+        steps{
+           sh"$MAVEN clean org.jacoco:jacoco-maven-plugin:prepare-agent install"
+           sh"$MAVEN sonar:sonar -Dsonar.host.url=http://172.17.0.3:9000"
+    }
+      }
        stage('Construir'){
            steps{
-               sh"$MAVEN install"
+               sh"$MAVEN clean install"
            }
            
        }
-      stage('verificar covertura'){
-        steps{
-      sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
-    }
-      }
+   
    }
 }
