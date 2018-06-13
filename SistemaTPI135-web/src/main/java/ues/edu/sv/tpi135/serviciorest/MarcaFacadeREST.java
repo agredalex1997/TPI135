@@ -41,13 +41,13 @@ public class MarcaFacadeREST extends AbstractRest<Marca> {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Marca> findByName(@PathParam("name") String name) {
-      List listaMarca = null;
-      
-      if (marcaEJB != null) {
-        listaMarca = marcaEJB.findByName(name);
-      }
-      
-      return listaMarca;
-}
+        List listaMarca = null;
+
+        if (marcaEJB != null) {
+            listaMarca = marcaEJB.findByName(name);
+        }
+
+        return listaMarca;
+    }
     
 }
