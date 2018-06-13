@@ -19,10 +19,14 @@
       }
        stage('Construir'){
            steps{
-               sh"$MAVEN clean install"
+               sh"$MAVEN -B -DskipTests clean package"
            }
-           
        }
+       stage('copiar artifact'){
+         steps{
+             step([$class: 'ArtifactArchiver', artifacts: 'SistemaTPI135-web/Payaramicro/*.war'])
+              }
+      }
    
    }
 }
