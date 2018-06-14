@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ues.edu.sv.tpi135.serviciorest;
+package ues.edu.sv.mantenimientoTPI.acceso;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
@@ -15,6 +15,6 @@ import org.junit.runner.RunWith;
  */
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = {"pretty"}, features = "src/test/resources", strict = true)
-public class AreaFacadeRESTTes {
+public class MarcaFacadeTest {
     
 }
