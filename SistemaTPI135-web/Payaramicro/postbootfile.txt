@@ -1,4 +1,4 @@
 #
-create-jdbc-connection-pool --dataSourceClassName=com.mysql.jdbc.jdbc2.optional.MysqlDataSource --restype=javax.sql.DataSource --property=user=root:password=1234:databaseName=mantenimientoTpi:serverName=marmantenimiento:portNumber=3306 mantenimientopool
+create-jdbc-connection-pool --dataSourceClassName=com.mysql.jdbc.jdbc2.optional.MysqlDataSource --restype=javax.sql.DataSource --property=user=root:password=1234:databaseName=mantenimientoTpi:serverName=stackManteniemiento_marmantenimiento:portNumber=3306 mantenimientopool
 #
 create-jdbc-resource --connectionpoolid=mantenimientopool jdbc/_mantenimiento
